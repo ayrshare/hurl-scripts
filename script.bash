@@ -1,0 +1,2 @@
+export HURL_NOW=$(date '+%y%m%d%h%s')
+hurl --test --variables-file vars.env analytics_social.hurl user.hurl post_flow.hurl history.hurl history_get_all.hurl generate_jwt.hurl createProfile.hurl short.hurl autoschedule.hurl
