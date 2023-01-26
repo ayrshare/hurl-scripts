@@ -10,7 +10,7 @@ Authorization: Bearer {{API_KEY}}
     "base64": true
 }
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"

@@ -10,7 +10,7 @@ Authorization: Bearer {{API_KEY}}
     "randomMediaUrl": true
 }
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -63,7 +63,7 @@ Authorization: Bearer {{API_KEY}}
     "id": "{{id}}"
 }
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -154,7 +154,7 @@ Authorization: Bearer {{API_KEY}}
     "id": "{{id}}"
 }
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"

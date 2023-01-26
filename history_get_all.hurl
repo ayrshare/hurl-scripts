@@ -3,7 +3,7 @@ GET {{BASE_URL}}/api/history/instagram?limit=30
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -31,7 +31,7 @@ GET {{BASE_URL}}/api/history/facebook?limit=25
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -68,7 +68,7 @@ GET {{BASE_URL}}/api/history/linkedin?limit=20
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"

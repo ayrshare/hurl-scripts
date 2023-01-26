@@ -7,7 +7,7 @@ Authorization: Bearer {{API_KEY}}
     "title": "greatscheudle"
 }
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -23,7 +23,7 @@ GET {{BASE_URL}}/api/auto-schedule
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -37,7 +37,7 @@ Authorization: Bearer {{API_KEY}}
     "title": "{{title}}"
 }
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"

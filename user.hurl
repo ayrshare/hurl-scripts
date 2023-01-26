@@ -3,7 +3,7 @@ GET {{BASE_URL}}/api/user?instagramQuota=true
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.activeSocialAccounts" count == 11

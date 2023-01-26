@@ -6,7 +6,7 @@ Authorization: Bearer {{API_KEY}}
     "url": "https://www.ayrshare.com"
 }
 
-HTTP/* 200
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
