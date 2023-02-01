@@ -106,8 +106,8 @@ jsonpath "$.displayNames[10].profileUrl" exists
 jsonpath "$.displayNames[10].userImage" exists
 jsonpath "$.displayNames[10].username" exists
 
-jsonpath "$.email" == "geoff@retirety.com"
+jsonpath "$.email" == "geoff@ayrshare.com"
 jsonpath "$.monthlyApiCalls" > 0
-jsonpath "$.refId" == "13a9da9e0df1183a7a6a1fc2c60b8023fa9a32a0"
+jsonpath "$.refId" == "9abf1426d6ce9122ef11c72bd62e59807c5cc083"
 jsonpath "$.title" == "Primary Profile"
 # -----------------------
