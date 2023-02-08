@@ -55,6 +55,16 @@ pi_id: jsonpath "$.postIds[3].id"
 tw_id: jsonpath "$.postIds[4].id"
 # -----------------------
 
+# /comments POST
+POST {{BASE_URL}}/api/comments
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+{
+    "id": "{{id}}",
+    "platforms": ["facebook", "instagram", "twitter"],
+    "comment": "hurl"
+}
+
 HTTP 200
 
 [Asserts]
