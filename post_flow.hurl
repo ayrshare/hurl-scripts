@@ -55,6 +55,67 @@ pi_id: jsonpath "$.postIds[3].id"
 tw_id: jsonpath "$.postIds[4].id"
 # -----------------------
 
+HTTP 200
+
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.id" == "{{id}}"
+
+jsonpath "$.facebook" exists
+jsonpath "$.facebook.status" == "success"
+jsonpath "$.facebook.comment" == "hurl"
+
+jsonpath "$.instagram" exists
+jsonpath "$.instagram.status" == "success"
+jsonpath "$.instagram.comment" == "hurl"
+
+jsonpath "$.twitter" exists
+jsonpath "$.twitter.status" == "success"
+jsonpath "$.twitter.comment" == "hurl"
+
+[Captures]
+fb_comment_id: jsonpath "$.facebook.commentId"
+fb_comment: jsonpath "$.facebook.comment"
+ig_comment_id: jsonpath "$.instagram.commentId"
+ig_comment: jsonpath "$.instagram.comment"
+tw_comment_id: jsonpath "$.twitter.commentId"
+tw_comment: jsonpath "$.twitter.comment"
+
+# -----------------------
+
+# /delay GET
+GET https://probe.ayrshare.com/delay?delay=10
+
+HTTP 200
+
+# -----------------------
+
+
+# /comments GET
+GET {{BASE_URL}}/api/comments?id={{id}}
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+
+HTTP 200
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.id" == "{{id}}"
+
+jsonpath "$.facebook" isCollection
+jsonpath "$.facebook[0].commentId" == "{{fb_comment_id}}"
+jsonpath "$.facebook[0].comment" == "{{fb_comment}}"
+
+jsonpath "$.instagram" isCollection
+jsonpath "$.instagram[0].commentId" == "{{ig_comment_id}}"
+jsonpath "$.instagram[0].comment" == "{{ig_comment}}"
+
+jsonpath "$.twitter" isCollection
+jsonpath "$.twitter[0].commentId" == "{{tw_comment_id}}"
+jsonpath "$.twitter[0].comment" == "{{tw_comment}}"
+# -----------------------
+
 # /analytics/post -------
 POST {{BASE_URL}}/api/analytics/post
 Content-Type: application/json
