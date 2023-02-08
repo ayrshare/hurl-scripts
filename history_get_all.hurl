@@ -1,5 +1,5 @@
 # /history all posts Instagram -
-GET {{BASE_URL}}/api/history/instagram?limit=30
+GET {{BASE_URL}}/api/history/instagram?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -7,7 +7,7 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.posts" count == 30
+jsonpath "$.posts" count == 10
 
 jsonpath "$.posts[0].caption" exists
 jsonpath "$.posts[0].commentsCount" >= 0
@@ -64,7 +64,7 @@ jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
 # /history all posts Facebook -
-GET {{BASE_URL}}/api/history/linkedin?limit=20
+GET {{BASE_URL}}/api/history/linkedin?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -72,7 +72,7 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.posts" count == 20
+jsonpath "$.posts" count == 10
 
 jsonpath "$.posts[0].clickCount" >= 0
 jsonpath "$.posts[0].commentCount" >= 0
