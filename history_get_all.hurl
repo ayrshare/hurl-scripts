@@ -63,7 +63,7 @@ jsonpath "$.posts[0].statusType" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
-# /history all posts Facebook -
+# /history all posts LinkedIn -
 GET {{BASE_URL}}/api/history/linkedin?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
