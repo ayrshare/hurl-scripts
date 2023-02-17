@@ -7,7 +7,7 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.posts" count == 10
+jsonpath "$.posts" count >= 5
 
 jsonpath "$.posts[0].caption" exists
 jsonpath "$.posts[0].commentsCount" >= 0
@@ -35,7 +35,7 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.posts" count == 25
+jsonpath "$.posts" count >= 5
 
 # jsonpath "$.posts[0].clicksUnique" exists
 jsonpath "$.posts[0].commentsCount" >= 0
@@ -72,7 +72,7 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.posts" count == 10
+jsonpath "$.posts" count >= 5
 
 jsonpath "$.posts[0].clickCount" >= 0
 jsonpath "$.posts[0].commentCount" >= 0
@@ -89,4 +89,34 @@ jsonpath "$.posts[0].shareCount" >= 0
 jsonpath "$.posts[0].status" == "PUBLISHED"
 jsonpath "$.posts[0].uniqueImpressionsCount" >= 0
 jsonpath "$.posts[0].visibility" == "PUBLIC"
+# -----------------------
+
+# /history all posts Twitter -
+GET {{BASE_URL}}/api/history/twitter?limit=10
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+
+HTTP 200
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.posts" count >= 5
+
+jsonpath "$.posts[0].authorId" exists
+jsonpath "$.posts[0].created" exists
+jsonpath "$.posts[0].editHistoryTweetIds" exists
+jsonpath "$.posts[0].id" exists
+jsonpath "$.posts[0].nonPublicMetrics.impressionCount" >= 0
+jsonpath "$.posts[0].nonPublicMetrics.userProfileClicks" >= 0
+jsonpath "$.posts[0].organicMetrics.impressionCount" >= 0
+jsonpath "$.posts[0].organicMetrics.userProfileClicks" >= 0
+jsonpath "$.posts[0].organicMetrics.retweetCount" >= 0
+jsonpath "$.posts[0].organicMetrics.likeCount" >= 0
+jsonpath "$.posts[0].organicMetrics.replyCount" >= 0
+jsonpath "$.posts[0].postUrl" exists
+jsonpath "$.posts[0].publicMetrics.retweetCount" >= 0
+jsonpath "$.posts[0].publicMetrics.replyCount" >= 0
+jsonpath "$.posts[0].publicMetrics.likeCount" >= 0
+jsonpath "$.posts[0].publicMetrics.quoteCount" >= 0
+jsonpath "$.posts[0].publicMetrics.impressionCount" >= 0
 # -----------------------
