@@ -37,7 +37,7 @@ Authorization: Bearer {{API_KEY}}
 {
     "id": "{{id}}",
     "platforms": ["twitter"],
-    "comment": "hurl"
+    "randomComment": true
 }
 
 HTTP 200
@@ -49,7 +49,7 @@ jsonpath "$.id" == "{{id}}"
 
 jsonpath "$.twitter" exists
 jsonpath "$.twitter.status" == "success"
-jsonpath "$.twitter.comment" == "hurl"
+# jsonpath "$.twitter.comment" == "hurl"
 
 [Captures]
 tw_comment_id: jsonpath "$.twitter.commentId"

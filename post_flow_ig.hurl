@@ -38,7 +38,7 @@ Authorization: Bearer {{API_KEY}}
 {
     "id": "{{id}}",
     "platforms": ["instagram"],
-    "comment": "hurl"
+    "randomComment": true
 }
 
 HTTP 200
@@ -50,7 +50,7 @@ jsonpath "$.id" == "{{id}}"
 
 jsonpath "$.instagram" exists
 jsonpath "$.instagram.status" == "success"
-jsonpath "$.instagram.comment" == "hurl"
+#jsonpath "$.instagram.comment" == "hurl"
 
 [Captures]
 ig_comment_id: jsonpath "$.instagram.commentId"

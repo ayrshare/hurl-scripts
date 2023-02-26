@@ -37,7 +37,7 @@ Authorization: Bearer {{API_KEY}}
 {
     "id": "{{id}}",
     "platforms": ["facebook"],
-    "comment": "hurl"
+    "randomComment": true
 }
 
 HTTP 200
@@ -49,7 +49,7 @@ jsonpath "$.id" == "{{id}}"
 
 jsonpath "$.facebook" exists
 jsonpath "$.facebook.status" == "success"
-jsonpath "$.facebook.comment" == "hurl"
+# jsonpath "$.facebook.comment" == "hurl"
 
 [Captures]
 fb_comment_id: jsonpath "$.facebook.commentId"
