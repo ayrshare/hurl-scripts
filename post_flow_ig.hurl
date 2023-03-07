@@ -55,6 +55,7 @@ jsonpath "$.instagram.status" == "success"
 [Captures]
 ig_comment_id: jsonpath "$.instagram.commentId"
 ig_comment: jsonpath "$.instagram.comment"
+ig_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /delay GET

@@ -54,14 +54,13 @@ jsonpath "$.twitter.status" == "success"
 [Captures]
 tw_comment_id: jsonpath "$.twitter.commentId"
 tw_comment: jsonpath "$.twitter.comment"
-
+tw_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /delay GET
 GET https://probe.ayrshare.com/delay?delay=30
 
 HTTP 200
-
 # -----------------------
 
 
@@ -79,6 +78,18 @@ jsonpath "$.id" == "{{id}}"
 jsonpath "$.twitter" isCollection
 jsonpath "$.twitter[0].commentId" == "{{tw_comment_id}}"
 jsonpath "$.twitter[0].comment" == "{{tw_comment}}"
+# -----------------------
+
+# /comments DELETE
+DELETE {{BASE_URL}}/api/comments/{{tw_comment_top_id}}
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+
+HTTP 200
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.twitter" exists
 # -----------------------
 
 # /analytics/post -------

@@ -54,6 +54,7 @@ jsonpath "$.facebook.status" == "success"
 [Captures]
 fb_comment_id: jsonpath "$.facebook.commentId"
 fb_comment: jsonpath "$.facebook.comment"
+fb_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /delay GET
@@ -78,6 +79,18 @@ jsonpath "$.id" == "{{id}}"
 jsonpath "$.facebook" isCollection
 jsonpath "$.facebook[0].commentId" == "{{fb_comment_id}}"
 jsonpath "$.facebook[0].comment" == "{{fb_comment}}"
+# -----------------------
+
+# /comments DELETE
+DELETE {{BASE_URL}}/api/comments/{{fb_comment_top_id}}
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+
+HTTP 200
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.facebook" exists
 # -----------------------
 
 # /analytics/post -------
