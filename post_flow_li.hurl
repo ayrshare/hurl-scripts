@@ -30,6 +30,9 @@ id: jsonpath "$['id']"
 li_id: jsonpath "$.postIds[0].id"
 # -----------------------
 
+# /delay GET
+GET https://probe.ayrshare.com/delay?delay=90
+
 # /analytics/post -------
 POST {{BASE_URL}}/api/analytics/post
 Content-Type: application/json
