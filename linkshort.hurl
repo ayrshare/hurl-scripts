@@ -18,3 +18,18 @@ jsonpath "$.id" == "{{urlId}}"
 jsonpath "$.originalUrl" == "https://www.ayrshare.com"
 jsonpath "$.created" exists
 # -----------------------
+
+# /link -----------------
+GET {{BASE_URL}}/api/analytics/links2/{{urlId}}
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+
+HTTP 200
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.analytics.shortUrl" matches /https:\/\/ayrs.io\/(.*)/
+jsonpath "$.analytics.id" == "{{urlId}}"
+jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.analytics.created" exists
+# -----------------------
