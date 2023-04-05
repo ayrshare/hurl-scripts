@@ -15,7 +15,7 @@ jsonpath "$.status" == "success"
 jsonpath "$.shortUrl" matches /https:\/\/ayrs.io\/(.*)/
 jsonpath "$.shortUrl" contains "{{urlId}}"
 jsonpath "$.id" == "{{urlId}}"
-jsonpath "$.originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.created" exists
 # -----------------------
 
