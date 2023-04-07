@@ -3,7 +3,7 @@ POST {{BASE_URL}}/api/links
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
-    "url": "https://www.ayrshare.com"
+    "url": "https://www.ayrshare.com/"
 }
 
 HTTP 200
@@ -31,7 +31,7 @@ jsonpath "$.status" == "success"
 jsonpath "$.analytics[0].totalClicks" exists
 jsonpath "$.analytics[0].refererCounts" exists
 jsonpath "$.analytics[0].browserCounts" exists
-jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.analytics[0].shortUrl" == "https://ayrs.io/{{urlId}}"
 jsonpath "$.analytics[0].created" exists
 # -----------------------
@@ -50,7 +50,7 @@ jsonpath "$.analytics[1]" not exists
 jsonpath "$.analytics[0].totalClicks" > 0
 jsonpath "$.analytics[0].refererCounts" exists
 jsonpath "$.analytics[0].browserCounts" exists
-jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.analytics[0].shortUrl" == "https://ayrs.io/{{urlId}}"
 jsonpath "$.analytics[0].created" exists
 # -----------------------
@@ -69,7 +69,7 @@ jsonpath "$.analytics[1]" exists
 jsonpath "$.analytics[0].totalClicks" == 1
 jsonpath "$.analytics[0].refererCounts" exists
 jsonpath "$.analytics[0].browserCounts" exists
-jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.analytics[0].shortUrl" == "https://ayrs.io/{{urlId}}"
 jsonpath "$.analytics[0].created" exists
 # -----------------------
@@ -86,7 +86,7 @@ jsonpath "$.status" == "success"
 jsonpath "$.analytics.totalClicks" exists
 jsonpath "$.analytics.shortUrl" matches /https:\/\/ayrs.io\/(.*)/
 jsonpath "$.analytics.id" == "{{urlId}}"
-jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.analytics.created" exists
 # -----------------------
 
@@ -102,6 +102,6 @@ jsonpath "$.status" == "success"
 jsonpath "$.analytics.totalClicks" == 1
 jsonpath "$.analytics.shortUrl" matches /https:\/\/ayrs.io\/(.*)/
 jsonpath "$.analytics.id" == "{{urlId}}"
-jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.analytics.created" exists
 # -----------------------
