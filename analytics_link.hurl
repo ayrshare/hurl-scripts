@@ -31,7 +31,7 @@ jsonpath "$.status" == "success"
 jsonpath "$.analytics[0].totalClicks" exists
 jsonpath "$.analytics[0].refererCounts" exists
 jsonpath "$.analytics[0].browserCounts" exists
-jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com"
+jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.analytics[0].shortUrl" == "https://ayrs.io/{{urlId}}"
 jsonpath "$.analytics[0].created" exists
 # -----------------------
