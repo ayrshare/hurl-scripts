@@ -31,7 +31,11 @@ li_id: jsonpath "$.postIds[0].id"
 # -----------------------
 
 # /delay GET
-GET https://probe.ayrshare.com/delay?delay=90
+GET https://probe.ayrshare.com/delay?delay=180
+
+HTTP 200
+
+#-----------------------
 
 # /analytics/post -------
 POST {{BASE_URL}}/api/analytics/post
