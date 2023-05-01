@@ -1,9 +1,9 @@
 # /resize -----------------
-POST {{BASE_URL}}/api/resize
+POST {{BASE_URL}}/api/media/resize
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
-    "imageUrl": "https://i.ytimg.com/vi/G8M6DZdtcMc/maxresdefault.jpg",
+    "mediaUrl": "https://i.ytimg.com/vi/G8M6DZdtcMc/maxresdefault.jpg",
     "platform": "instagram"
 }
 
@@ -16,14 +16,13 @@ jsonpath "$.platform" == "instagram"
 # -----------------------
 
 # /resize with watermark, blur, dimensions-----------------
-POST {{BASE_URL}}/api/resize
+POST {{BASE_URL}}/api/media/resize
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
-    "imageUrl": "https://i.ytimg.com/vi/G8M6DZdtcMc/maxresdefault.jpg",
+    "mediaUrl": "https://i.ytimg.com/vi/G8M6DZdtcMc/maxresdefault.jpg",
     "watermarkUrl": "https://www.ayrshare.com/wp-content/uploads/ayrshare-purple-icon.jpg",
-    "blur": true,
-    "color": "#000000",
+    "effects": { "blur": true, "color": "#000000"},
     "dimensions": { "width": 100, "height": 100 }
 }
 

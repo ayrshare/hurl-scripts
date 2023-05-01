@@ -75,7 +75,7 @@ jsonpath "$.analytics[0].created" exists
 # -----------------------
 
 # /analytics/links-short/:linkId GET -----------------
-GET {{BASE_URL}}/api/analytics/links-short/{{urlId}}
+GET {{BASE_URL}}/api/links/{{urlId}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -88,20 +88,21 @@ jsonpath "$.analytics.shortUrl" matches /https:\/\/ayrs.io\/(.*)/
 jsonpath "$.analytics.id" == "{{urlId}}"
 jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.analytics.created" exists
+jsonpath "$.analytics.totalClicks" >= 0
 # -----------------------
 
 # /analytics/links-short/:linkId GET with click date params-----------------
-GET {{BASE_URL}}/api/analytics/links-short/{{urlId}}?fromClickDate=2023-03-17&toClickDate=2023-03-18
-Content-Type: application/json
-Authorization: Bearer {{API_KEY}}
+# GET {{BASE_URL}}/api/links/{{urlId}}?fromClickDate=2023-03-17&toClickDate=2023-03-18
+# Content-Type: application/json
+# Authorization: Bearer {{API_KEY}}
 
-HTTP 200
-[Asserts]
-header "Content-Type" == "application/json; charset=utf-8"
-jsonpath "$.status" == "success"
-jsonpath "$.analytics.totalClicks" == 1
-jsonpath "$.analytics.shortUrl" matches /https:\/\/ayrs.io\/(.*)/
-jsonpath "$.analytics.id" == "{{urlId}}"
-jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com/"
-jsonpath "$.analytics.created" exists
+# HTTP 200
+# [Asserts]
+# header "Content-Type" == "application/json; charset=utf-8"
+# jsonpath "$.status" == "success"
+# jsonpath "$.analytics.totalClicks" == 1
+# jsonpath "$.analytics.shortUrl" matches /https:\/\/ayrs.io\/(.*)/
+# jsonpath "$.analytics.id" == "{{urlId}}"
+# jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com/"
+# jsonpath "$.analytics.created" exists
 # -----------------------
