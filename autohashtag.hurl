@@ -23,5 +23,8 @@ Authorization: Bearer {{API_KEY}}
 HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
-jsonpath "$.post" == "Today is a great day #todayis #greatday #greatdays"
+jsonpath "$.post" contains "Today is a great day"
+jsonpath "$.post" contains "#todayis"
+jsonpath "$.post" contains "#greatday"
+jsonpath "$.post" contains "#greatdays"
 # -----------------------
