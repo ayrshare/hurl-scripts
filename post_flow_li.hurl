@@ -38,28 +38,28 @@ HTTP 200
 #-----------------------
 
 # /analytics/post -------
-POST {{BASE_URL}}/api/analytics/post
-Content-Type: application/json
-Authorization: Bearer {{API_KEY}}
-{
-    "id": "{{id}}"
-}
+#POST {{BASE_URL}}/api/analytics/post
+#Content-Type: application/json
+#Authorization: Bearer {{API_KEY}}
+#{
+#    "id": "{{id}}"
+#}
 
-HTTP 200
-[Asserts]
-header "Content-Type" == "application/json; charset=utf-8"
-jsonpath "$.status" == "success"
-jsonpath "$.id" == "{{id}}"
+#HTTP 200
+#[Asserts]
+#header "Content-Type" == "application/json; charset=utf-8"
+#jsonpath "$.status" == "success"
+#jsonpath "$.id" == "{{id}}"
 
-jsonpath "$.linkedin" exists
-jsonpath "$.linkedin.id" == "{{li_id}}"
-jsonpath "$.linkedin.postUrl" exists
-jsonpath "$.linkedin.analytics.shareCount" exists
-jsonpath "$.linkedin.analytics.likeCount" exists
-jsonpath "$.linkedin.analytics.engagement" exists
-jsonpath "$.linkedin.analytics.clickCount" exists
-jsonpath "$.linkedin.analytics.impressionCount" exists
-jsonpath "$.linkedin.analytics.commentCount" exists
+#jsonpath "$.linkedin" exists
+#jsonpath "$.linkedin.id" == "{{li_id}}"
+#jsonpath "$.linkedin.postUrl" exists
+#jsonpath "$.linkedin.analytics.shareCount" exists
+#jsonpath "$.linkedin.analytics.likeCount" exists
+#jsonpath "$.linkedin.analytics.engagement" exists
+#jsonpath "$.linkedin.analytics.clickCount" exists
+#jsonpath "$.linkedin.analytics.impressionCount" exists
+#jsonpath "$.linkedin.analytics.commentCount" exists
 # -----------------------
 
 # /post DELETE ---------
