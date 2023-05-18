@@ -11,7 +11,7 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.url" matches /https:\/\/media.ayrshare.com\/[\w]*\/[\w]*\/(.*).jpg/
+jsonpath "$.url" matches /https:\/\/media.ayrshare.com\/[\w]*\/[\w]*.jpg/
 jsonpath "$.platform" == "instagram" 
 # -----------------------
 
@@ -30,5 +30,5 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.url" matches /https:\/\/media.ayrshare.com\/[\w]*\/[\w]*\/(.*).jpg/
+jsonpath "$.url" matches /https:\/\/media.ayrshare.com\/[\w]*\/[\w]*.jpg/
 # -----------------------
