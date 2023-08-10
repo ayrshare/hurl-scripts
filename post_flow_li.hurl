@@ -31,7 +31,7 @@ li_id: jsonpath "$.postIds[0].id"
 # -----------------------
 
 # /delay GET
-GET https://probe.ayrshare.com/delay?delay=90
+GET https://probe.ayrshare.com/delay?delay=60
 
 HTTP 200
 

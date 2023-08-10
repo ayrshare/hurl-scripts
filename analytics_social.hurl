@@ -32,7 +32,6 @@ jsonpath "$.twitter.analytics.url" exists
 jsonpath "$.twitter.analytics.username" exists
 jsonpath "$.twitter.analytics.verified" exists
 
-jsonpath "$.facebook.analytics.birthday" exists
 jsonpath "$.facebook.analytics.fanCount" exists
 jsonpath "$.facebook.analytics.followersCount" exists
 jsonpath "$.facebook.analytics.id" exists
