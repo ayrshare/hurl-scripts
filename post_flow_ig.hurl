@@ -59,7 +59,7 @@ ig_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /delay GET
-GET https://probe.ayrshare.com/delay?delay=30
+GET https://probe.ayrshare.com/delay?delay=45
 
 HTTP 200
 
