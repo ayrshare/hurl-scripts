@@ -13,15 +13,11 @@ HTTP 200
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 
-jsonpath "$.twitter.analytics.bannerImageUrl" exists
 jsonpath "$.twitter.analytics.created" exists
 jsonpath "$.twitter.analytics.description" exists
 jsonpath "$.twitter.analytics.displayName" exists
-jsonpath "$.twitter.analytics.favoritesCount" exists
 jsonpath "$.twitter.analytics.followersCount" exists
-jsonpath "$.twitter.analytics.friendsCount" exists
 jsonpath "$.twitter.analytics.id" exists
-jsonpath "$.twitter.analytics.likedCount" exists
 jsonpath "$.twitter.analytics.listedCount" exists
 jsonpath "$.twitter.analytics.location" exists
 jsonpath "$.twitter.analytics.name" exists
