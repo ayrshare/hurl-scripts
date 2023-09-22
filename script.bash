@@ -1,5 +1,5 @@
 export HURL_NOW=$(date '+%y%m%d%h%s')
-hurl --test --very-verbose --variables-file vars.env messages.hurl
+hurl --test --error-format long --variables-file vars.env messages.hurl
 #resize.hurl
 #post_flow_fb.hurl post_flow_ig.hurl post_flow_li.hurl post_flow_pi.hurl post_flow_tw.hurl
 #profile.hurl
