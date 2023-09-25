@@ -18,13 +18,12 @@ jsonpath "$.refId" exists
 jsonpath "$.profileKey" exists
 # ---------------------------------
 
-# /delay GET
-GET https://probe.ayrshare.com/delay?delay=10
-
 # /profiles/profile GET -------------
 GET {{BASE_URL}}/api/profiles?profileKeys[0]={{profileKey}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 10000
 
 HTTP 200
 [Asserts]

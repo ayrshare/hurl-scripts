@@ -57,17 +57,12 @@ tw_comment: jsonpath "$.twitter.comment"
 tw_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
-# /delay GET
-GET https://probe.ayrshare.com/delay?delay=30
-
-HTTP 200
-# -----------------------
-
-
 # /comments GET
 GET {{BASE_URL}}/api/comments?id={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 15000
 
 HTTP 200
 [Asserts]

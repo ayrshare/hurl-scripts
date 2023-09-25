@@ -34,12 +34,13 @@ fb_id: jsonpath "$.postIds[0].id"
 POST {{BASE_URL}}/api/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 5000
 {
     "id": "{{id}}",
     "platforms": ["facebook"],
     "randomComment": true
 }
-
 HTTP 200
 
 [Asserts]
@@ -57,20 +58,14 @@ fb_comment: jsonpath "$.facebook.comment"
 fb_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
-# /delay GET
-GET https://probe.ayrshare.com/delay?delay=60
-
-HTTP 200
-
-# -----------------------
-
-
 # /comments GET
 GET {{BASE_URL}}/api/comments?id={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
-
+[Options]
+delay: 30000
 HTTP 200
+
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
