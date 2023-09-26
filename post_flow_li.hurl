@@ -30,13 +30,6 @@ id: jsonpath "$['id']"
 li_id: jsonpath "$.postIds[0].id"
 # -----------------------
 
-# /delay GET
-GET https://probe.ayrshare.com/delay?delay=60
-
-HTTP 200
-
-#-----------------------
-
 # /analytics/post -------
 #POST {{BASE_URL}}/api/analytics/post
 #Content-Type: application/json
@@ -66,6 +59,8 @@ HTTP 200
 DELETE {{BASE_URL}}/api/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 30000
 {
     "id": "{{id}}"
 }

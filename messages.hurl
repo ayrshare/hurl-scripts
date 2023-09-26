@@ -16,16 +16,12 @@ jsonpath "$.dm_conversation_id" exists
 jsonpath "$.dm_event_id" exists
 # -----------------------
 
-# /delay GET
-GET https://probe.ayrshare.com/delay?delay=70
-
-HTTP 200
-#-----------------------
-
 # /messages/twitter ---------------
 GET {{BASE_URL}}/api/messages/twitter
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 30000
 
 HTTP 200
 [Asserts]
