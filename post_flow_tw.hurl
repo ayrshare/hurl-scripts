@@ -54,7 +54,7 @@ jsonpath "$.twitter.status" == "success"
 [Captures]
 tw_comment_id: jsonpath "$.twitter.commentId"
 tw_comment: jsonpath "$.twitter.comment"
-tw_comment_top_id: jsonpath "$.commentId"
+tw_comment_top_id: jsonpath "$.id"
 # -----------------------
 
 # /comments GET

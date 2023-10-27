@@ -55,7 +55,7 @@ jsonpath "$.facebook.status" == "success"
 [Captures]
 fb_comment_id: jsonpath "$.facebook.commentId"
 fb_comment: jsonpath "$.facebook.comment"
-fb_comment_top_id: jsonpath "$.commentId"
+fb_comment_top_id: jsonpath "$.id"
 # -----------------------
 
 # /comments GET
