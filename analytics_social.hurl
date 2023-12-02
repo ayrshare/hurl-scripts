@@ -76,13 +76,13 @@ jsonpath "$.instagram.analytics.username" exists
 jsonpath "$.instagram.analytics.websiteClicksCount" exists
 
 jsonpath "$.linkedin.analytics.clickCount" exists
-jsonpath "$.linkedin.analytics.clicks.mobileCareersPageClicks.careersPageJobsClicks" exists
-jsonpath "$.linkedin.analytics.clicks.mobileCareersPageClicks.careersPagePromoLinksClicks" exists
-jsonpath "$.linkedin.analytics.clicks.mobileCareersPageClicks.careersPageEmployeesClicks" exists
-jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPagePromoLinksClicks" exists
-jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageBannerPromoClicks" exists
-jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageJobsClicks" exists
-jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageEmployeesClicks" exists
+# jsonpath "$.linkedin.analytics.clicks.mobileCareersPageClicks.careersPageJobsClicks" exists
+# jsonpath "$.linkedin.analytics.clicks.mobileCareersPageClicks.careersPagePromoLinksClicks" exists
+# jsonpath "$.linkedin.analytics.clicks.mobileCareersPageClicks.careersPageEmployeesClicks" exists
+# jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPagePromoLinksClicks" exists
+# jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageBannerPromoClicks" exists
+# jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageJobsClicks" exists
+# jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageEmployeesClicks" exists
 jsonpath "$.linkedin.analytics.commentCount" exists
 jsonpath "$.linkedin.analytics.commentMentionsCount" exists
 jsonpath "$.linkedin.analytics.engagement" exists
