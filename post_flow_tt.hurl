@@ -34,7 +34,7 @@ POST {{BASE_URL}}/api/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 30000
+delay: 60000
 {
     "id": "{{id}}",
     "platforms": ["tiktok"],
