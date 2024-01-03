@@ -55,7 +55,8 @@ jsonpath "$.facebook.status" == "success"
 [Captures]
 fb_comment_id: jsonpath "$.facebook.commentId"
 fb_comment: jsonpath "$.facebook.comment"
-fb_comment_top_id: jsonpath "$.id"
+fb_comment_top_id: jsonpath "$.commentId"
+
 # -----------------------
 
 # /comments GET
@@ -76,8 +77,34 @@ jsonpath "$.facebook[0].commentId" == "{{fb_comment_id}}"
 jsonpath "$.facebook[0].comment" == "{{fb_comment}}"
 # -----------------------
 
+# /comments/reply POST
+POST {{BASE_URL}}/api/comments/reply
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+{
+    "commentId": "{{fb_comment_top_id}}",
+    "platforms": [
+        "facebook"
+    ],
+    "randomComment": true
+}
+HTTP 200
+
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.id" == "{{id}}"
+jsonpath "$.commentId" exists
+jsonpath "$.facebook" exists
+jsonpath "$.facebook.status" == "success"
+jsonpath "$.facebook.commentId" exists
+jsonpath "$.facebook.sourceCommentId" exists
+jsonpath "$.facebook.comment" exists
+jsonpath "$.facebook.platform" == "facebook"
+# -----------------------
+
 # /comments DELETE
-DELETE {{BASE_URL}}/api/comments/{{fb_comment_top_id}}
+DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

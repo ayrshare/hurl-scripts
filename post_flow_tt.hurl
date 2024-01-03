@@ -54,7 +54,7 @@ jsonpath "$.tiktok.status" == "success"
 [Captures]
 tt_comment_id: jsonpath "$.tiktok.commentId"
 tt_comment: jsonpath "$.tiktok.comment"
-tt_comment_top_id: jsonpath "$.id"
+tt_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /comments GET
@@ -75,8 +75,34 @@ jsonpath "$.tiktok[0].commentId" == "{{tt_comment_id}}"
 jsonpath "$.tiktok[0].comment" == "{{tt_comment}}"
 # -----------------------
 
+# /comments/reply POST
+POST {{BASE_URL}}/api/comments/reply
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+{
+    "commentId": "{{tt_comment_top_id}}",
+    "platforms": [
+        "tiktok"
+    ],
+    "randomComment": true
+}
+HTTP 200
+
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.id" == "{{id}}"
+jsonpath "$.commentId" exists
+jsonpath "$.tiktok" exists
+jsonpath "$.tiktok.status" == "success"
+jsonpath "$.tiktok.commentId" exists
+jsonpath "$.tiktok.sourceCommentId" exists
+jsonpath "$.tiktok.comment" exists
+jsonpath "$.tiktok.platform" == "tiktok"
+# -----------------------
+
 # /comments DELETE
-DELETE {{BASE_URL}}/api/comments/{{tt_comment_top_id}}
+DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

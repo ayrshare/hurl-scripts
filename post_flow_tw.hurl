@@ -54,7 +54,7 @@ jsonpath "$.twitter.status" == "success"
 [Captures]
 tw_comment_id: jsonpath "$.twitter.commentId"
 tw_comment: jsonpath "$.twitter.comment"
-tw_comment_top_id: jsonpath "$.id"
+tw_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /comments GET
@@ -75,8 +75,34 @@ jsonpath "$.twitter[0].commentId" == "{{tw_comment_id}}"
 jsonpath "$.twitter[0].comment" == "{{tw_comment}}"
 # -----------------------
 
+# /comments/reply POST
+POST {{BASE_URL}}/api/comments/reply
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+{
+    "commentId": "{{tw_comment_top_id}}",
+    "platforms": [
+        "twitter"
+    ],
+    "randomComment": true
+}
+HTTP 200
+
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.id" == "{{id}}"
+jsonpath "$.commentId" exists
+jsonpath "$.twitter" exists
+jsonpath "$.twitter.status" == "success"
+jsonpath "$.twitter.commentId" exists
+jsonpath "$.twitter.sourceCommentId" exists
+jsonpath "$.twitter.comment" exists
+jsonpath "$.twitter.platform" == "twitter"
+# -----------------------
+
 # /comments DELETE
-DELETE {{BASE_URL}}/api/comments/{{tw_comment_top_id}}
+DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

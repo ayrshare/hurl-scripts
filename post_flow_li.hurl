@@ -55,7 +55,7 @@ jsonpath "$.linkedin.status" == "success"
 [Captures]
 li_comment_id: jsonpath "$.linkedin.commentId"
 li_comment: jsonpath "$.linkedin.comment"
-li_comment_top_id: jsonpath "$.id"
+li_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /comments GET
@@ -76,8 +76,34 @@ jsonpath "$.linkedin[0].commentId" == "{{li_comment_id}}"
 jsonpath "$.linkedin[0].comment" == "{{li_comment}}"
 # -----------------------
 
+# /comments/reply POST
+POST {{BASE_URL}}/api/comments/reply
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+{
+    "commentId": "{{li_comment_top_id}}",
+    "platforms": [
+        "linkedin"
+    ],
+    "randomComment": true
+}
+HTTP 200
+
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.id" == "{{id}}"
+jsonpath "$.commentId" exists
+jsonpath "$.linkedin" exists
+jsonpath "$.linkedin.status" == "success"
+jsonpath "$.linkedin.commentId" exists
+jsonpath "$.linkedin.sourceCommentId" exists
+jsonpath "$.linkedin.comment" exists
+jsonpath "$.linkedin.platform" == "linkedin"
+# -----------------------
+
 # /comments DELETE
-DELETE {{BASE_URL}}/api/comments/{{li_comment_top_id}}
+DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

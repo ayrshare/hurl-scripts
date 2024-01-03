@@ -55,7 +55,7 @@ jsonpath "$.instagram.status" == "success"
 [Captures]
 ig_comment_id: jsonpath "$.instagram.commentId"
 ig_comment: jsonpath "$.instagram.comment"
-ig_comment_top_id: jsonpath "$.id"
+ig_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /comments GET
@@ -74,6 +74,32 @@ jsonpath "$.id" == "{{id}}"
 jsonpath "$.instagram" isCollection
 jsonpath "$.instagram[0].commentId" == "{{ig_comment_id}}"
 jsonpath "$.instagram[0].comment" == "{{ig_comment}}"
+# -----------------------
+
+# /comments/reply POST
+POST {{BASE_URL}}/api/comments/reply
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+{
+    "commentId": "{{ig_comment_top_id}}",
+    "platforms": [
+        "instagram"
+    ],
+    "randomComment": true
+}
+HTTP 200
+
+[Asserts]
+header "Content-Type" == "application/json; charset=utf-8"
+jsonpath "$.status" == "success"
+jsonpath "$.id" == "{{id}}"
+jsonpath "$.commentId" exists
+jsonpath "$.instagram" exists
+jsonpath "$.instagram.status" == "success"
+jsonpath "$.instagram.commentId" exists
+jsonpath "$.instagram.sourceCommentId" exists
+jsonpath "$.instagram.comment" exists
+jsonpath "$.instagram.platform" == "instagram"
 # -----------------------
 
 # /analytics/post -------
