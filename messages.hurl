@@ -6,7 +6,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "message": "test",
-    "recipientId": "1660570896971583488"
+    "recipientId": "1612532188616200192"
 }
 
 HTTP 200
@@ -82,10 +82,13 @@ jsonpath "$.users[0].name" exists
 jsonpath "$.users[0].username" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
+
+[Captures]
+conversationId: jsonpath "$.conversationIds[0]"
 # -----------------------
 
 # GET /messages/twitter?conversationId ---------------
-GET {{BASE_URL}}/api/messages/twitter?conversationId={{id}}-1660570896971583488
+GET {{BASE_URL}}/api/messages/twitter?conversationId={{conversationId}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
