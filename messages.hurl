@@ -16,6 +16,9 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.dm_conversation_id" exists
 jsonpath "$.dm_event_id" exists
+
+[Captures]
+conversationId: jsonpath "$.dm_conversation_id"
 # -----------------------
 
 # /messages/twitter ---------------
@@ -53,7 +56,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "message": "test",
-    "conversationId": "{{id}}-{{id}}"
+    "conversationId": "{{conversationId}}"
 }
 
 HTTP 200
