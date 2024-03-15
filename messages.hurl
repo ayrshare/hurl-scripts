@@ -124,7 +124,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "message": "test",
-    "recipientId": "7332781063424021"
+    "recipientId": "7101149746568522"
 }
 
 HTTP 200
