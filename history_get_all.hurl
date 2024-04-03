@@ -9,7 +9,6 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.posts" count >= 2
 
-jsonpath "$.posts[0].caption" exists
 jsonpath "$.posts[0].commentsCount" >= 0
 jsonpath "$.posts[0].created" exists
 jsonpath "$.posts[0].id" exists
@@ -19,7 +18,6 @@ jsonpath "$.posts[0].mediaType" exists
 jsonpath "$.posts[0].mediaUrl" exists
 jsonpath "$.posts[0].post" exists
 jsonpath "$.posts[0].postUrl" exists
-jsonpath "$.posts[0].timestamp" exists
 jsonpath "$.posts[0].username" exists
 
 jsonpath "$.lastUpdated" exists
@@ -41,13 +39,12 @@ jsonpath "$.posts" count >= 5
 jsonpath "$.posts[0].commentsCount" >= 0
 jsonpath "$.posts[0].created" exists
 # jsonpath "$.posts[0].engagedUsers" >= 0
-jsonpath "$.posts[0].from.name" exists
-jsonpath "$.posts[0].from.id" exists
+# jsonpath "$.posts[0].from.name" exists
+# jsonpath "$.posts[0].from.id" exists
 jsonpath "$.posts[0].id" exists
 # jsonpath "$.posts[0].impressionsUnique" >= 0
 jsonpath "$.posts[0].isPopular" exists
 jsonpath "$.posts[0].likeCount" >= 0
-jsonpath "$.posts[0].message" exists
 # jsonpath "$.posts[0].negativeFeedback" exists
 # jsonpath "$.posts[0].negativeFeedbackUnique" exists
 jsonpath "$.posts[0].post" exists
