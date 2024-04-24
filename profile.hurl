@@ -39,6 +39,8 @@ jsonpath "$.profiles[0].refId" == "{{refId}}"
 PUT {{BASE_URL}}/api/profiles/profile
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 5000
 {
     "profileKey": "{{profileKey}}",
     "disableSocial": ["facebook", "instagram"],
