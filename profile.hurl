@@ -1,5 +1,5 @@
 # /profiles/profile POST -------------
-POST {{BASE_URL}}/api/profiles/profile
+POST {{BASE_URL}}/api/profiles
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -36,7 +36,7 @@ jsonpath "$.profiles[0].refId" == "{{refId}}"
 # ---------------------------------
 
 # /profiles/profile PUT -------------
-PUT {{BASE_URL}}/api/profiles/profile
+PATCH {{BASE_URL}}/api/profiles
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -57,7 +57,7 @@ jsonpath "$.refId" == "{{refId}}"
 # ---------------------------------
 
 # /profiles/profile DELETE -------------
-DELETE {{BASE_URL}}/api/profiles/profile
+DELETE {{BASE_URL}}/api/profiles
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
