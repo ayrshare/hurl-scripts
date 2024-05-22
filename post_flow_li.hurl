@@ -3,7 +3,7 @@ POST {{BASE_URL}}/api/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 5000
+delay: 10000
 {
     "randomPost": true,
     "platforms": [
@@ -37,7 +37,7 @@ POST {{BASE_URL}}/api/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 5000
+delay: 10000
 {
     "id": "{{id}}",
     "platforms": ["linkedin"],
