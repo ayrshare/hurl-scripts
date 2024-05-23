@@ -6,7 +6,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "message": "test",
-    "recipientId": "1612532188616200192"
+    "recipientId": "{{X_RECIPIENT_ID}}"
 }
 
 HTTP 200
@@ -26,7 +26,7 @@ GET {{BASE_URL}}/api/messages/twitter
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 30000
+delay: 3000
 
 HTTP 200
 [Asserts]
@@ -34,20 +34,16 @@ header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
-jsonpath "$.messages[0].eventType" == "MessageCreate"
-jsonpath "$.messages[0].text" exists
-jsonpath "$.messages[0].dmConversationId" exists
+jsonpath "$.messages[0].action" == "received"
+jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].sender" exists
-jsonpath "$.users" exists
-jsonpath "$.users[0].id" exists
-jsonpath "$.users[0].name" exists
-jsonpath "$.users[0].username" exists
+jsonpath "$.messages[0].senderDetails" exists
+jsonpath "$.messagesCount" > 0
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
-[Captures]
-id: jsonpath "$.users[0].id"
+# [Captures]
+# id: jsonpath "$.users[0].id"
 # -----------------------
 
 # POST /messages conversationId
@@ -79,10 +75,7 @@ header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
 jsonpath "$.conversationIds" exists
-jsonpath "$.users" exists
-jsonpath "$.users[0].id" exists
-jsonpath "$.users[0].name" exists
-jsonpath "$.users[0].username" exists
+jsonpath "$.conversationIds[0]" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
@@ -101,20 +94,14 @@ header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
-jsonpath "$.messages[0].event_type" == "MessageCreate"
-jsonpath "$.messages[0].text" exists
+jsonpath "$.messages[0].action" == "sent"
+jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].sender_id" exists
-jsonpath "$.users" exists
-jsonpath "$.users[0].id" exists
-jsonpath "$.users[0].name" exists
-jsonpath "$.users[0].username" exists
+jsonpath "$.messages[0].conversationId" exists
+jsonpath "$.messagesCount" > 0
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 # -----------------------
-
-
-
 
 # FACEBOOK ----------------------
 
@@ -124,7 +111,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "message": "test",
-    "recipientId": "7101149746568522"
+    "recipientId": "{{FB_RECIPIENT_ID}}"
 }
 
 HTTP 200
@@ -141,7 +128,7 @@ GET {{BASE_URL}}/api/messages/facebook
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 30000
+delay: 3000
 
 HTTP 200
 [Asserts]
@@ -150,11 +137,11 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].created_time" exists
-jsonpath "$.messages[0].from" exists
-jsonpath "$.messages[0].to" exists
+jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].conversationId" exists
+jsonpath "$.messages[0].recipientId" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
@@ -172,10 +159,8 @@ HTTP 200
 header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
-jsonpath "$.conversations" exists
-jsonpath "$.conversations[0].id" exists
-jsonpath "$.conversations[0].link" exists
-jsonpath "$.conversations[0].updated_time" exists
+jsonpath "$.conversationIds" exists
+jsonpath "$.conversationIds[0]" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 # -----------------------
@@ -192,15 +177,14 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].created_time" exists
-jsonpath "$.messages[0].from" exists
-jsonpath "$.messages[0].to" exists
+jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
+jsonpath "$.messages[0].conversationId" exists
+jsonpath "$.messages[0].recipientId" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 # -----------------------
-
-
 
 
 # INSTAGRAM --------------------------
@@ -211,7 +195,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "message": "test",
-    "recipientId": "7358388697547405"
+    "recipientId": "{{IG_RECIPIENT_ID}}"
 }
 
 HTTP 200
@@ -228,7 +212,7 @@ GET {{BASE_URL}}/api/messages/instagram
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 30000
+delay: 3000
 
 HTTP 200
 [Asserts]
@@ -236,12 +220,13 @@ header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
-jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].created_time" exists
-jsonpath "$.messages[0].from" exists
-jsonpath "$.messages[0].to" exists
+jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
+jsonpath "$.messages[0].senderId" exists
+jsonpath "$.messages[0].id" exists
 jsonpath "$.messages[0].conversationId" exists
+jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messagesCount" > 0
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
@@ -259,9 +244,8 @@ HTTP 200
 header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
-jsonpath "$.conversations" exists
-jsonpath "$.conversations[0].id" exists
-jsonpath "$.conversations[0].updated_time" exists
+jsonpath "$.conversationIds" exists
+jsonpath "$.conversationIds[0]" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 # -----------------------
@@ -278,10 +262,11 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].created_time" exists
-jsonpath "$.messages[0].from" exists
-jsonpath "$.messages[0].to" exists
+jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
+jsonpath "$.messages[0].conversationId" exists
+jsonpath "$.messages[0].recipientId" exists
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 # -----------------------
