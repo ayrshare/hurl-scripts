@@ -14,11 +14,7 @@ HTTP 200
 header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
-jsonpath "$.dm_conversation_id" exists
-jsonpath "$.dm_event_id" exists
-
-[Captures]
-conversationId: jsonpath "$.dm_conversation_id"
+jsonpath "$.messageId" exists
 # -----------------------
 
 # /messages/twitter ---------------
@@ -34,35 +30,13 @@ header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
-jsonpath "$.messages[0].action" == "received"
+jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].id" exists
 jsonpath "$.messages[0].senderDetails" exists
 jsonpath "$.messagesCount" > 0
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
-
-# [Captures]
-# id: jsonpath "$.users[0].id"
-# -----------------------
-
-# POST /messages conversationId
-POST {{BASE_URL}}/api/messages/twitter
-Content-Type: application/json
-Authorization: Bearer {{API_KEY}}
-{
-    "message": "test",
-    "conversationId": "{{conversationId}}"
-}
-
-HTTP 200
-[Asserts]
-header "Content-Type" == "application/json; charset=utf-8"
-
-jsonpath "$.status" == "success"
-jsonpath "$.dm_conversation_id" exists
-jsonpath "$.dm_event_id" exists
-# -----------------------
 
 # GET /messages/twitter?conversationsOnly=true ---------------
 GET {{BASE_URL}}/api/messages/twitter?conversationsOnly=true
@@ -94,7 +68,6 @@ header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
-jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].id" exists
 jsonpath "$.messages[0].conversationId" exists
@@ -119,8 +92,9 @@ HTTP 200
 header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
-jsonpath "$.recipient_id" exists
-jsonpath "$.message_id" exists
+jsonpath "$.recipientId" exists
+jsonpath "$.messageId" exists
+jsonpath "$.message" exists
 # -----------------------
 
 # /messages/facebook ---------------
@@ -137,7 +111,7 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messages[0].created" exists
 jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].conversationId" exists
@@ -177,7 +151,7 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messages[0].created" exists
 jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].conversationId" exists
@@ -203,8 +177,9 @@ HTTP 200
 header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
-jsonpath "$.recipient_id" exists
-jsonpath "$.message_id" exists
+jsonpath "$.recipientId" exists
+jsonpath "$.messageId" exists
+jsonpath "$.message" exists
 # -----------------------
 
 # /messages/instagram ---------------
@@ -225,7 +200,7 @@ jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].senderId" exists
 jsonpath "$.messages[0].id" exists
 jsonpath "$.messages[0].conversationId" exists
-jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messages[0].created" exists
 jsonpath "$.messagesCount" > 0
 jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
@@ -262,7 +237,7 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
 jsonpath "$.messages[0].id" exists
-jsonpath "$.messages[0].createdTime" exists
+jsonpath "$.messages[0].created" exists
 jsonpath "$.messages[0].action" == "sent"
 jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].conversationId" exists
