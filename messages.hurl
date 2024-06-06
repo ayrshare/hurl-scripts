@@ -30,7 +30,7 @@ header "Content-Type" == "application/json; charset=utf-8"
 
 jsonpath "$.status" == "success"
 jsonpath "$.messages" exists
-jsonpath "$.messages[0].action" == "sent"
+jsonpath "$.messages[0].action" == "received"
 jsonpath "$.messages[0].message" exists
 jsonpath "$.messages[0].id" exists
 jsonpath "$.messages[0].senderDetails" exists
