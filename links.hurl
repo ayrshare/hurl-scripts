@@ -9,6 +9,7 @@ Authorization: Bearer {{API_KEY}}
 HTTP 200
 [Captures]
 urlId: jsonpath "$.shortUrl" regex /https:\/\/ayrs.io\/(.*)/
+id: jsonpath "$['id']"
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -19,8 +20,9 @@ jsonpath "$.originalUrl" == "https://www.ayrshare.com/"
 jsonpath "$.created" exists
 # -----------------------
 
+
 # /links GET -----------------
-GET {{BASE_URL}}/api/links
+GET {{BASE_URL}}/api/links/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -28,12 +30,12 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
-jsonpath "$.analytics[0].totalClicks" exists
-jsonpath "$.analytics[0].refererCounts" exists
-jsonpath "$.analytics[0].browserCounts" exists
-jsonpath "$.analytics[0].originalUrl" == "https://www.ayrshare.com/"
-jsonpath "$.analytics[0].shortUrl" == "https://ayrs.io/{{urlId}}"
-jsonpath "$.analytics[0].created" exists
+jsonpath "$.analytics.totalClicks" exists
+jsonpath "$.analytics.refererCounts" exists
+jsonpath "$.analytics.browserCounts" exists
+jsonpath "$.analytics.originalUrl" == "https://www.ayrshare.com/"
+jsonpath "$.analytics.shortUrl" == "https://ayrs.io/{{urlId}}"
+jsonpath "$.analytics.created" exists
 # -----------------------
 
 # /links GET with created date params-----------------
