@@ -1,4 +1,5 @@
 vars-dev.env
 vars-dev-api.env
 vars-prod.env
+*.env
 /html/*
