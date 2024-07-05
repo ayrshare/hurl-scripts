@@ -16,5 +16,5 @@ header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 jsonpath "$.title" exists
 jsonpath "$.token" exists
-jsonpath "$.url" startsWith "https://profile.ayrshare.com?domain=ayrshare&jwt="
+jsonpath "$.url" startsWith "https://profile.ayrshare.com?jwt="
 # ------------------------------
