@@ -37,7 +37,7 @@ POST {{BASE_URL}}/api/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 10000
+delay: 15000
 {
     "id": "{{id}}",
     "platforms": ["linkedin"],
