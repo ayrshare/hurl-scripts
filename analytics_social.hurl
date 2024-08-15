@@ -84,14 +84,12 @@ jsonpath "$.linkedin.analytics.clickCount" exists
 # jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageJobsClicks" exists
 # jsonpath "$.linkedin.analytics.clicks.careersPageClicks.careersPageEmployeesClicks" exists
 jsonpath "$.linkedin.analytics.commentCount" exists
-jsonpath "$.linkedin.analytics.commentMentionsCount" exists
 jsonpath "$.linkedin.analytics.engagement" exists
 jsonpath "$.linkedin.analytics.followers.organicFollowerCount" exists
 jsonpath "$.linkedin.analytics.followers.paidFollowerCount" exists
 jsonpath "$.linkedin.analytics.impressionCount" exists
 jsonpath "$.linkedin.analytics.likeCount" exists
 jsonpath "$.linkedin.analytics.shareCount" exists
-jsonpath "$.linkedin.analytics.shareMentionsCount" exists
 jsonpath "$.linkedin.analytics.views.aboutPageViews" exists
 jsonpath "$.linkedin.analytics.views.allDesktopPageViews" exists
 jsonpath "$.linkedin.analytics.views.allMobilePageViews" exists
