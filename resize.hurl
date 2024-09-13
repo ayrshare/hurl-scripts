@@ -22,7 +22,7 @@ Authorization: Bearer {{API_KEY}}
 {
     "mediaUrl": "https://i.ytimg.com/vi/G8M6DZdtcMc/maxresdefault.jpg",
     "watermarkUrl": "https://www.ayrshare.com/wp-content/uploads/ayrshare-purple-icon.jpg",
-    "effects": { "blur": true, "color": "#000000"},
+    "effects": { "blur": true, "color": "#000000" },
     "dimensions": { "width": 100, "height": 100 }
 }
 
