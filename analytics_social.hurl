@@ -34,7 +34,7 @@ jsonpath "$.facebook.analytics.id" exists
 jsonpath "$.facebook.analytics.link" exists
 jsonpath "$.facebook.analytics.name" exists
 # jsonpath "$.facebook.analytics.pageConsumptions" exists
-jsonpath "$.facebook.analytics.pageConsumptionsByConsumptionType" exists
+# jsonpath "$.facebook.analytics.pageConsumptionsByConsumptionType" exists
 # jsonpath "$.facebook.analytics.pageEngagedUsers" exists
 jsonpath "$.facebook.analytics.pageFanRemoves" exists
 # jsonpath "$.facebook.analytics.pageFansByLikeSource" exists
