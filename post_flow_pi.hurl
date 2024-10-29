@@ -47,14 +47,10 @@ jsonpath "$.id" == "{{id}}"
 jsonpath "$.pinterest" exists
 jsonpath "$.pinterest.id" == "{{pi_id}}"
 jsonpath "$.pinterest.postUrl" exists
-jsonpath "$.pinterest.analytics.impression" exists
-jsonpath "$.pinterest.analytics.save" exists
-jsonpath "$.pinterest.analytics.pinClick" exists
-jsonpath "$.pinterest.analytics.outboundClick" exists
-jsonpath "$.pinterest.analytics.videoMrcView" exists
-jsonpath "$.pinterest.analytics.videoAvgWatchTime" exists
-jsonpath "$.pinterest.analytics.videoV50WatchTime" exists
-jsonpath "$.pinterest.analytics.quartile95PercentView" exists
+jsonpath "$.pinterest.analytics.description" exists
+jsonpath "$.pinterest.analytics.media" exists
+jsonpath "$.pinterest.analytics.totalComments" exists
+jsonpath "$.pinterest.analytics.totalReactions" exists
 
 # -----------------------
 
