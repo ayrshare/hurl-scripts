@@ -4,7 +4,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "platforms": [
-        "twitter", "facebook", "instagram",  "linkedin", "tiktok", "youtube"
+         "threads"
     ]
 }
 
@@ -168,4 +168,12 @@ jsonpath "$.youtube.analytics.videoCount" exists
 jsonpath "$.youtube.analytics.videosAddedToPlaylists" exists
 jsonpath "$.youtube.analytics.viewCount" exists
 jsonpath "$.youtube.analytics.views" exists
+
+jsonpath "$.threads.analytics.followersCount" exists
+jsonpath "$.threads.analytics.likes" exists
+jsonpath "$.threads.analytics.quotes" exists
+jsonpath "$.threads.analytics.replies" exists
+jsonpath "$.threads.analytics.reposts" exists
+jsonpath "$.threads.analytics.views" exists
+
 # -----------------------

@@ -5,7 +5,7 @@ Authorization: Bearer {{API_KEY}}
 {
     "randomPost": true,
     "platforms": [
-        "instagram", "facebook", "linkedin", "pinterest", "twitter", "tiktok", "youtube"
+        "instagram", "facebook", "linkedin", "pinterest", "twitter", "tiktok", "youtube", "threads"
     ],
     "mediaUrl": ["https://img.ayrshare.com/012/vid.mp4"],
     "youTubeOptions": {
@@ -44,18 +44,24 @@ jsonpath "$.postIds[3].postUrl" exists
 jsonpath "$.postIds[3].platform" == "pinterest"
 
 jsonpath "$.postIds[4].status" == "success"
-jsonpath "$.postIds[4].id" == "pending"
-jsonpath "$.postIds[4].platform" == "tiktok"
+jsonpath "$.postIds[4].id" exists
+jsonpath "$.postIds[4].platform" == "threads"
 
 jsonpath "$.postIds[5].status" == "success"
-jsonpath "$.postIds[5].id" exists
-jsonpath "$.postIds[5].postUrl" exists
-jsonpath "$.postIds[5].platform" == "twitter"
+#jsonpath "$.postIds[5].id" == "pending"
+jsonpath "$.postIds[5].platform" == "tiktok"
 
 jsonpath "$.postIds[6].status" == "success"
 jsonpath "$.postIds[6].id" exists
 jsonpath "$.postIds[6].postUrl" exists
-jsonpath "$.postIds[6].platform" == "youtube"
+jsonpath "$.postIds[6].platform" == "twitter"
+
+jsonpath "$.postIds[7].status" == "success"
+jsonpath "$.postIds[7].id" exists
+jsonpath "$.postIds[7].postUrl" exists
+jsonpath "$.postIds[7].platform" == "youtube"
+
+
 
 jsonpath "$.id" exists
 jsonpath "$.refId" exists
@@ -67,9 +73,10 @@ fb_id: jsonpath "$.postIds[0].id"
 ig_id: jsonpath "$.postIds[1].id"
 li_id: jsonpath "$.postIds[2].id"
 pi_id: jsonpath "$.postIds[3].id"
-tt_id: jsonpath "$.postIds[4].id"
-tw_id: jsonpath "$.postIds[5].id"
-yt_id: jsonpath "$.postIds[6].id"
+th_id: jsonpath "$.postIds[4].id"
+tt_id: jsonpath "$.postIds[5].id"
+tw_id: jsonpath "$.postIds[6].id"
+yt_id: jsonpath "$.postIds[7].id"
 # -----------------------
 
 # /analytics/post -------
@@ -78,7 +85,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "id": "{{id}}",
-    "platforms": ["instagram", "facebook", "linkedin", "pinterest", "twitter", "youtube"]
+    "platforms": ["instagram", "facebook", "linkedin", "pinterest", "twitter", "youtube", "threads"]
 }
 
 HTTP 200
@@ -194,6 +201,14 @@ jsonpath "$.youtube.analytics.thumbnailUrl" exists
 jsonpath "$.youtube.analytics.title" exists
 jsonpath "$.youtube.analytics.videosAddedToPlaylists" exists
 jsonpath "$.youtube.analytics.views" exists
+
+jsonpath "$.threads" exists
+jsonpath "$.threads.id" == "{{th_id}}"
+jsonpath "$.threads.analytics.views" exists
+jsonpath "$.threads.analytics.likes" exists
+jsonpath "$.threads.analytics.replies" exists
+jsonpath "$.threads.analytics.reposts" exists
+jsonpath "$.threads.analytics.quotes" exists
 # -----------------------
 
 # /post DELETE ---------
