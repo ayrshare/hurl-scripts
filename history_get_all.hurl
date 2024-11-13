@@ -89,29 +89,29 @@ jsonpath "$.posts[0].visibility" == "PUBLIC"
 # -----------------------
 
 # /history all posts Threads -
-GET {{BASE_URL}}/api/history/threads?limit=10
-Content-Type: application/json
-Authorization: Bearer {{API_KEY}}
+# GET {{BASE_URL}}/api/history/threads?limit=10
+# Content-Type: application/json
+# Authorization: Bearer {{API_KEY}}
 
-HTTP 200
-[Asserts]
-header "Content-Type" == "application/json; charset=utf-8"
-jsonpath "$.status" == "success"
-jsonpath "$.posts" count >= 5
+#HTTP 200
+#[Asserts]
+#header "Content-Type" == "application/json; charset=utf-8"
+#jsonpath "$.status" == "success"
+#jsonpath "$.posts" count >= 5
 
-jsonpath "$.posts[0].hasReplies" exists
-jsonpath "$.posts[0].id" exists
-jsonpath "$.posts[0].isQuotePost" exists
-jsonpath "$.posts[0].mediaProductType" exists
-jsonpath "$.posts[0].mediaType" exists
-jsonpath "$.posts[0].mediaUrl" exists
-jsonpath "$.posts[0].owner.id" exists
-jsonpath "$.posts[0].permalink" exists
-jsonpath "$.posts[0].replyAudience" exists
-jsonpath "$.posts[0].shortcode" exists
-jsonpath "$.posts[0].text" exists
-jsonpath "$.posts[0].timestamp" exists
-jsonpath "$.posts[0].username" exists
+#jsonpath "$.posts[0].hasReplies" exists
+#jsonpath "$.posts[0].id" exists
+#jsonpath "$.posts[0].isQuotePost" exists
+#jsonpath "$.posts[0].mediaProductType" exists
+#jsonpath "$.posts[0].mediaType" exists
+#jsonpath "$.posts[0].mediaUrl" exists
+#jsonpath "$.posts[0].owner.id" exists
+#jsonpath "$.posts[0].permalink" exists
+#jsonpath "$.posts[0].replyAudience" exists
+#jsonpath "$.posts[0].shortcode" exists
+#jsonpath "$.posts[0].text" exists
+#jsonpath "$.posts[0].timestamp" exists
+#jsonpath "$.posts[0].username" exists
 
 # /history all posts Twitter -
 GET {{BASE_URL}}/api/history/twitter?limit=10

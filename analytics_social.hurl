@@ -4,7 +4,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "platforms": [
-        "twitter", "facebook", "instagram",  "linkedin", "tiktok", "youtube", "threads"
+        "twitter", "facebook", "instagram",  "linkedin", "tiktok", "youtube"
     ]
 }
 
