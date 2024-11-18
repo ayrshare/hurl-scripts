@@ -10,7 +10,7 @@ Update the `vars.env` with your keys.
 
 - Add your API Key from the [Ayrshare Dashboard](https://app.ayrshare.com)
 - If a Business Plan, add your Profile Key
-- If a Business Plan and testing [generateJWT](https://docs.ayrshare.com/rest-api/endpoints/profiles#generate-a-jwt) endpoint add your private key as a Base64 string. Please see below.
+- If a Business Plan and testing [generateJWT](https://www.ayrshare.com/docs/apis/profiles/generate-jwt) endpoint add your private key as a Base64 string. Please see below.
 - Add your email address
 - Add your Ref Id
 
