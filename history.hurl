@@ -7,10 +7,10 @@ HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 
-jsonpath "$[0].created" exists
-jsonpath "$[0].id" exists
-jsonpath "$[0].post" exists
-jsonpath "$[0].platforms" count >= 1
-jsonpath "$[0].status" exists
-jsonpath "$[0].type" exists
+jsonpath "$.history[0].created" exists
+jsonpath "$.history[0].id" exists
+jsonpath "$.history[0].post" exists
+jsonpath "$.history[0].platforms" count >= 1
+jsonpath "$.history[0].status" exists
+jsonpath "$.history[0].type" exists
 # -----------------------
