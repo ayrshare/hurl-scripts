@@ -104,10 +104,12 @@ jsonpath "$.linkedin.comment" exists
 jsonpath "$.linkedin.platform" == "linkedin"
 # -----------------------
 
-# /comments DELETE
+# /comments DELETE - using Ayrshare Post ID
 DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 5000
 
 HTTP 200
 [Asserts]
@@ -146,7 +148,7 @@ DELETE {{BASE_URL}}/api/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 15000
+delay: 10000
 {
     "id": "{{id}}"
 }
