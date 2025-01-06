@@ -89,8 +89,10 @@ Authorization: Bearer {{API_KEY}}
     ],
     "randomComment": true
 }
-HTTP 200
+[Options]
+delay: 10000
 
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -109,7 +111,7 @@ DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 5000
+delay: 10000
 
 HTTP 200
 [Asserts]
