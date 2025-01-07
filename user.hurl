@@ -6,95 +6,104 @@ Authorization: Bearer {{API_KEY}}
 HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
-jsonpath "$.activeSocialAccounts" count == 10
+jsonpath "$.activeSocialAccounts" count == 11
 jsonpath "$.ayrlinkUrl" exists
 jsonpath "$.created" exists
 
-# Facebook
+# Bluesky
 jsonpath "$.displayNames[0].created" exists
 jsonpath "$.displayNames[0].displayName" exists
 jsonpath "$.displayNames[0].id" exists
-jsonpath "$.displayNames[0].platform" == "facebook"
+jsonpath "$.displayNames[0].platform" == "bluesky"
 jsonpath "$.displayNames[0].profileUrl" exists
 jsonpath "$.displayNames[0].userImage" exists
+jsonpath "$.displayNames[0].username" exists
 
-# GMB
+# Facebook
 jsonpath "$.displayNames[1].created" exists
 jsonpath "$.displayNames[1].displayName" exists
-jsonpath "$.displayNames[1].platform" == "gmb"
+jsonpath "$.displayNames[1].id" exists
+jsonpath "$.displayNames[1].platform" == "facebook"
+jsonpath "$.displayNames[1].profileUrl" exists
+jsonpath "$.displayNames[1].userImage" exists
 
-# Instagram
+# GMB
 jsonpath "$.displayNames[2].created" exists
 jsonpath "$.displayNames[2].displayName" exists
-jsonpath "$.displayNames[2].id" exists
-jsonpath "$.displayNames[2].platform" == "instagram"
-jsonpath "$.displayNames[2].profileUrl" exists
-jsonpath "$.displayNames[2].usedQuota" exists
-jsonpath "$.displayNames[2].userImage" exists
-jsonpath "$.displayNames[2].username" exists
+jsonpath "$.displayNames[2].platform" == "gmb"
 
-# LinkedIn
+# Instagram
 jsonpath "$.displayNames[3].created" exists
 jsonpath "$.displayNames[3].displayName" exists
 jsonpath "$.displayNames[3].id" exists
-jsonpath "$.displayNames[3].platform" == "linkedin"
+jsonpath "$.displayNames[3].platform" == "instagram"
 jsonpath "$.displayNames[3].profileUrl" exists
-jsonpath "$.displayNames[3].refreshDaysRemaining" exists
-jsonpath "$.displayNames[3].type" exists
+jsonpath "$.displayNames[3].usedQuota" exists
 jsonpath "$.displayNames[3].userImage" exists
+jsonpath "$.displayNames[3].username" exists
 
-# Pinterest
+# LinkedIn
 jsonpath "$.displayNames[4].created" exists
 jsonpath "$.displayNames[4].displayName" exists
 jsonpath "$.displayNames[4].id" exists
-jsonpath "$.displayNames[4].platform" == "pinterest"
+jsonpath "$.displayNames[4].platform" == "linkedin"
 jsonpath "$.displayNames[4].profileUrl" exists
+jsonpath "$.displayNames[4].refreshDaysRemaining" exists
+jsonpath "$.displayNames[4].type" exists
 jsonpath "$.displayNames[4].userImage" exists
-jsonpath "$.displayNames[4].username" exists
 
-# Reddit
+# Pinterest
 jsonpath "$.displayNames[5].created" exists
 jsonpath "$.displayNames[5].displayName" exists
-jsonpath "$.displayNames[5].platform" == "reddit"
+jsonpath "$.displayNames[5].id" exists
+jsonpath "$.displayNames[5].platform" == "pinterest"
 jsonpath "$.displayNames[5].profileUrl" exists
 jsonpath "$.displayNames[5].userImage" exists
 jsonpath "$.displayNames[5].username" exists
 
-# Telegram
+# Reddit
 jsonpath "$.displayNames[6].created" exists
 jsonpath "$.displayNames[6].displayName" exists
-jsonpath "$.displayNames[6].id" exists
-jsonpath "$.displayNames[6].platform" == "telegram"
+jsonpath "$.displayNames[6].platform" == "reddit"
 jsonpath "$.displayNames[6].profileUrl" exists
-jsonpath "$.displayNames[6].type" exists
-# jsonpath "$.displayNames[6].userImage" exists
+jsonpath "$.displayNames[6].userImage" exists
+jsonpath "$.displayNames[6].username" exists
 
-# TikTok
+# Telegram
 jsonpath "$.displayNames[7].created" exists
 jsonpath "$.displayNames[7].displayName" exists
 jsonpath "$.displayNames[7].id" exists
-jsonpath "$.displayNames[7].platform" == "tiktok"
+jsonpath "$.displayNames[7].platform" == "telegram"
 jsonpath "$.displayNames[7].profileUrl" exists
-jsonpath "$.displayNames[7].userImage" exists
-jsonpath "$.displayNames[7].username" exists
+jsonpath "$.displayNames[7].type" exists
+# jsonpath "$.displayNames[7].userImage" exists
 
-# Twitter
+# TikTok
 jsonpath "$.displayNames[8].created" exists
 jsonpath "$.displayNames[8].displayName" exists
 jsonpath "$.displayNames[8].id" exists
-jsonpath "$.displayNames[8].platform" == "twitter"
+jsonpath "$.displayNames[8].platform" == "tiktok"
 jsonpath "$.displayNames[8].profileUrl" exists
 jsonpath "$.displayNames[8].userImage" exists
 jsonpath "$.displayNames[8].username" exists
 
-# YouTube
+# Twitter
 jsonpath "$.displayNames[9].created" exists
 jsonpath "$.displayNames[9].displayName" exists
 jsonpath "$.displayNames[9].id" exists
-jsonpath "$.displayNames[9].platform" == "youtube"
+jsonpath "$.displayNames[9].platform" == "twitter"
 jsonpath "$.displayNames[9].profileUrl" exists
 jsonpath "$.displayNames[9].userImage" exists
 jsonpath "$.displayNames[9].username" exists
+
+# YouTube
+jsonpath "$.displayNames[10].created" exists
+jsonpath "$.displayNames[10].displayName" exists
+jsonpath "$.displayNames[10].id" exists
+jsonpath "$.displayNames[10].platform" == "youtube"
+jsonpath "$.displayNames[10].profileUrl" exists
+jsonpath "$.displayNames[10].userImage" exists
+jsonpath "$.displayNames[10].username" exists
 
 jsonpath "$.email" == {{EMAIL}}
 jsonpath "$.monthlyApiCalls" > 0
