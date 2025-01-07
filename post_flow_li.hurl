@@ -82,6 +82,8 @@ jsonpath "$.linkedin[0].comment" == "{{li_comment}}"
 POST {{BASE_URL}}/api/comments/reply
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 10000
 {
     "commentId": "{{li_comment_top_id}}",
     "platforms": [
@@ -89,8 +91,6 @@ Authorization: Bearer {{API_KEY}}
     ],
     "randomComment": true
 }
-[Options]
-delay: 10000
 
 HTTP 200
 [Asserts]
