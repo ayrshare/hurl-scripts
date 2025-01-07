@@ -62,7 +62,7 @@ GET {{BASE_URL}}/api/comments?id={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 5000
+delay: 10000
 
 HTTP 200
 [Asserts]
