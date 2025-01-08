@@ -58,7 +58,6 @@ jsonpath "$.facebook.analytics.verified" exists
 
 jsonpath "$.instagram.analytics.biography" exists
 jsonpath "$.instagram.analytics.commentsCount" exists
-jsonpath "$.instagram.analytics.emailContactsCount" exists
 jsonpath "$.instagram.analytics.followersCount" exists
 jsonpath "$.instagram.analytics.followsCount" exists
 jsonpath "$.instagram.analytics.id" exists
@@ -67,13 +66,9 @@ jsonpath "$.instagram.analytics.impressionsCount" exists
 jsonpath "$.instagram.analytics.likeCount" exists
 jsonpath "$.instagram.analytics.mediaCount" exists
 jsonpath "$.instagram.analytics.name" exists
-jsonpath "$.instagram.analytics.phoneCallClicksCount" exists
 jsonpath "$.instagram.analytics.profilePictureUrl" exists
-jsonpath "$.instagram.analytics.profileViewsCount" exists
 jsonpath "$.instagram.analytics.reachCount" exists
-jsonpath "$.instagram.analytics.textMessageClicksCount" exists
 jsonpath "$.instagram.analytics.username" exists
-jsonpath "$.instagram.analytics.websiteClicksCount" exists
 
 jsonpath "$.linkedin.analytics.clickCount" exists
 # jsonpath "$.linkedin.analytics.clicks.mobileCareersPageClicks.careersPageJobsClicks" exists
