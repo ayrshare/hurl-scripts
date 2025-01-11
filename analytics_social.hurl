@@ -4,7 +4,7 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
     "platforms": [
-        "twitter", "facebook", "instagram",  "linkedin", "tiktok", "youtube"
+        "bluesky", "twitter", "facebook", "instagram",  "linkedin", "tiktok", "youtube"
     ]
 }
 
@@ -13,11 +13,13 @@ HTTP 200
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
 
-jsonpath "$.twitter.analytics.created" exists
-jsonpath "$.twitter.analytics.description" exists
-jsonpath "$.twitter.analytics.displayName" exists
-jsonpath "$.twitter.analytics.followersCount" exists
-jsonpath "$.twitter.analytics.id" exists
+jsonpath "$.bluesky.analytics.created" exists
+jsonpath "$.bluesky.analytics.followersCount" exists
+jsonpath "$.bluesky.analytics.displayName" exists
+jsonpath "$.bluesky.analytics.followsCount" exists
+jsonpath "$.bluesky.analytics.id" exists
+jsonpath "$.bluesky.analytics.handle" exists
+
 jsonpath "$.twitter.analytics.listedCount" exists
 jsonpath "$.twitter.analytics.location" exists
 jsonpath "$.twitter.analytics.name" exists
