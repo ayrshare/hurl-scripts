@@ -83,7 +83,7 @@ POST {{BASE_URL}}/api/comments/reply
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 10000
+delay: 15000
 {
     "commentId": "{{li_comment_top_id}}",
     "platforms": [
@@ -111,7 +111,7 @@ DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 10000
+delay: 15000
 
 HTTP 200
 [Asserts]

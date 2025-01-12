@@ -34,6 +34,8 @@ tw_id: jsonpath "$.postIds[0].id"
 POST {{BASE_URL}}/api/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 10000
 {
     "id": "{{id}}",
     "platforms": ["twitter"],
@@ -41,7 +43,6 @@ Authorization: Bearer {{API_KEY}}
 }
 
 HTTP 200
-
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -105,6 +106,8 @@ jsonpath "$.twitter.platform" == "twitter"
 DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 10000
 
 HTTP 200
 [Asserts]
