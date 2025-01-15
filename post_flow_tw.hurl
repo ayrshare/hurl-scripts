@@ -35,7 +35,7 @@ POST {{BASE_URL}}/api/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 10000
+delay: 15000
 {
     "id": "{{id}}",
     "platforms": ["twitter"],
@@ -63,7 +63,7 @@ GET {{BASE_URL}}/api/comments?id={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 10000
+delay: 15000
 
 HTTP 200
 [Asserts]
