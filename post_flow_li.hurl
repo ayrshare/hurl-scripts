@@ -43,8 +43,8 @@ delay: 15000
     "platforms": ["linkedin"],
     "randomComment": true
 }
-HTTP 200
 
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -66,8 +66,8 @@ Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
 delay: 15000
-HTTP 200
 
+HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
 jsonpath "$.status" == "success"
@@ -83,7 +83,7 @@ POST {{BASE_URL}}/api/comments/reply
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 15000
+delay: 20000
 {
     "commentId": "{{li_comment_top_id}}",
     "platforms": [
@@ -111,7 +111,7 @@ DELETE {{BASE_URL}}/api/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
-delay: 15000
+delay: 20000
 
 HTTP 200
 [Asserts]
