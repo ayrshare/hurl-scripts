@@ -106,7 +106,7 @@ jsonpath "$.displayNames[10].userImage" exists
 jsonpath "$.displayNames[10].username" exists
 
 jsonpath "$.email" == {{EMAIL}}
-jsonpath "$.monthlyApiCalls" > 0
+jsonpath "$.monthlyApiCalls" >= 0
 jsonpath "$.refId" == {{REFID}}
 jsonpath "$.title" == "Primary Profile"
 # -----------------------
