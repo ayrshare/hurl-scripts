@@ -1,5 +1,5 @@
 # /analytics/social -----
-POST {{BASE_URL}}/api/analytics/social
+POST {{BASE_URL}}/analytics/social
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

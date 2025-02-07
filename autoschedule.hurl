@@ -1,5 +1,5 @@
 # /auto-schedule -----------------
-POST {{BASE_URL}}/api/auto-schedule
+POST {{BASE_URL}}/auto-schedule
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -25,7 +25,7 @@ schedule: jsonpath "$['schedule']"
 daysOfWeek: jsonpath "$['daysOfWeek']"
 excludeDates: jsonpath "$['excludeDates']"
 
-GET {{BASE_URL}}/api/auto-schedule
+GET {{BASE_URL}}/auto-schedule
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -38,7 +38,7 @@ jsonpath "$.schedules.{{title}}.schedule" == {{schedule}}
 jsonpath "$.schedules.{{title}}.daysOfWeek" == {{daysOfWeek}}
 jsonpath "$.schedules.{{title}}.excludeDates" == {{excludeDates}}
 
-DELETE {{BASE_URL}}/api/auto-schedule
+DELETE {{BASE_URL}}/auto-schedule
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

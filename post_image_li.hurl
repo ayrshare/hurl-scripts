@@ -1,5 +1,5 @@
 # /post POST compliant image -------------
-POST {{BASE_URL}}/api/post 
+POST {{BASE_URL}}/post 
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -31,7 +31,7 @@ li_id: jsonpath "$.postIds[0].id"
 # -----------------------
 
 # /post POST non-compliant too large image -------------
-POST {{BASE_URL}}/api/post 
+POST {{BASE_URL}}/post 
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -62,7 +62,7 @@ jsonpath "$.validate" == true
 # -----------------------
 
 # CLEANUP ----------------------------
-DELETE {{BASE_URL}}/api/post
+DELETE {{BASE_URL}}/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]

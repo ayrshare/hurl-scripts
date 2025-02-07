@@ -1,5 +1,5 @@
 # /feed POST -----------------
-POST {{BASE_URL}}/api/feed
+POST {{BASE_URL}}/feed
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -24,7 +24,7 @@ jsonpath "$.useFirstImage" == true
 # -----------------------
 
 # /feed DELETE -----------------
-DELETE {{BASE_URL}}/api/feed
+DELETE {{BASE_URL}}/feed
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

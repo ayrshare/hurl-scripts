@@ -1,5 +1,5 @@
 # /resize -----------------
-POST {{BASE_URL}}/api/media/resize
+POST {{BASE_URL}}/media/resize
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -16,7 +16,7 @@ jsonpath "$.platform" == "instagram"
 # -----------------------
 
 # /resize with watermark, blur, dimensions-----------------
-POST {{BASE_URL}}/api/media/resize
+POST {{BASE_URL}}/media/resize
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

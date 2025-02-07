@@ -1,5 +1,5 @@
 # /short -----------------
-POST {{BASE_URL}}/api/short
+POST {{BASE_URL}}/short
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

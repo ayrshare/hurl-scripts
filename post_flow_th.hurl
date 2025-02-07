@@ -1,5 +1,5 @@
 # /post POST -------------
-POST {{BASE_URL}}/api/post
+POST {{BASE_URL}}/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -30,7 +30,7 @@ th_id: jsonpath "$.postIds[0].id"
 # -----------------------
 
 # /comments POST
-POST {{BASE_URL}}/api/comments
+POST {{BASE_URL}}/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -59,7 +59,7 @@ th_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /comments GET
-GET {{BASE_URL}}/api/comments?id={{id}}
+GET {{BASE_URL}}/comments?id={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -77,7 +77,7 @@ jsonpath "$.threads[0].comment" == "{{th_comment}}"
 # -----------------------
 
 # /comments/reply POST
-POST {{BASE_URL}}/api/comments/reply
+POST {{BASE_URL}}/comments/reply
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -103,7 +103,7 @@ jsonpath "$.threads.platform" == "threads"
 # -----------------------
 
 # /analytics/post -------
-POST {{BASE_URL}}/api/analytics/post
+POST {{BASE_URL}}/analytics/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

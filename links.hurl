@@ -1,5 +1,5 @@
 # /links POST -----------------
-POST {{BASE_URL}}/api/links
+POST {{BASE_URL}}/links
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -22,7 +22,7 @@ jsonpath "$.created" exists
 
 
 # /links GET -----------------
-GET {{BASE_URL}}/api/links/{{id}}
+GET {{BASE_URL}}/links/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -39,7 +39,7 @@ jsonpath "$.analytics.created" exists
 # -----------------------
 
 # /links GET with created date params-----------------
-#GET {{BASE_URL}}/api/links?fromCreatedDate=2023-03-16&toCreatedDate=2023-03-17
+#GET {{BASE_URL}}/links?fromCreatedDate=2023-03-16&toCreatedDate=2023-03-17
 #Content-Type: application/json
 #Authorization: Bearer {{API_KEY}}
 
@@ -58,7 +58,7 @@ jsonpath "$.analytics.created" exists
 # -----------------------
 
 # /links GET with click date params -----------------
-#GET {{BASE_URL}}/api/links?fromClickDate=2023-03-17&toClickDate=2023-03-18
+#GET {{BASE_URL}}/links?fromClickDate=2023-03-17&toClickDate=2023-03-18
 #Content-Type: application/json
 #Authorization: Bearer {{API_KEY}}
 
@@ -77,7 +77,7 @@ jsonpath "$.analytics.created" exists
 # -----------------------
 
 # /links/:linkId GET -----------------
-GET {{BASE_URL}}/api/links/{{urlId}}
+GET {{BASE_URL}}/links/{{urlId}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -94,7 +94,7 @@ jsonpath "$.analytics.totalClicks" >= 0
 # -----------------------
 
 # /links/:linkId GET with click date params-----------------
-# GET {{BASE_URL}}/api/links/{{urlId}}?fromClickDate=2023-03-17&toClickDate=2023-03-18
+# GET {{BASE_URL}}/links/{{urlId}}?fromClickDate=2023-03-17&toClickDate=2023-03-18
 # Content-Type: application/json
 # Authorization: Bearer {{API_KEY}}
 

@@ -1,5 +1,5 @@
 # /auto-hashtag -----------------
-POST {{BASE_URL}}/api/auto-hashtag
+POST {{BASE_URL}}/auto-hashtag
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 { 

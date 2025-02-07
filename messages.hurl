@@ -1,7 +1,7 @@
 # TWITTER ----------------------
 
 # POST /messages recipientId
-POST {{BASE_URL}}/api/messages/twitter
+POST {{BASE_URL}}/messages/twitter
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -18,7 +18,7 @@ jsonpath "$.messageId" exists
 # -----------------------
 
 # /messages/twitter ---------------
-GET {{BASE_URL}}/api/messages/twitter
+GET {{BASE_URL}}/messages/twitter
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -39,7 +39,7 @@ jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
 # GET /messages/twitter?conversationsOnly=true ---------------
-GET {{BASE_URL}}/api/messages/twitter?conversationsOnly=true
+GET {{BASE_URL}}/messages/twitter?conversationsOnly=true
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -58,7 +58,7 @@ conversationId: jsonpath "$.conversationIds[0]"
 # -----------------------
 
 # GET /messages/twitter?conversationId ---------------
-GET {{BASE_URL}}/api/messages/twitter?conversationId={{conversationId}}
+GET {{BASE_URL}}/messages/twitter?conversationId={{conversationId}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -79,7 +79,7 @@ jsonpath "$.nextUpdate" exists
 # FACEBOOK ----------------------
 
 # POST /messages recipientId
-POST {{BASE_URL}}/api/messages/facebook
+POST {{BASE_URL}}/messages/facebook
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -98,7 +98,7 @@ jsonpath "$.message" exists
 # -----------------------
 
 # /messages/facebook ---------------
-GET {{BASE_URL}}/api/messages/facebook
+GET {{BASE_URL}}/messages/facebook
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -124,7 +124,7 @@ id: jsonpath "$.messages[0].conversationId"
 # -----------------------
 
 # GET /messages/facebook?conversationsOnly=true ---------------
-GET {{BASE_URL}}/api/messages/facebook?conversationsOnly=true
+GET {{BASE_URL}}/messages/facebook?conversationsOnly=true
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -140,7 +140,7 @@ jsonpath "$.nextUpdate" exists
 # -----------------------
 
 # GET /messages/facebook?conversationId ---------------
-GET {{BASE_URL}}/api/messages/facebook?conversationId={{id}}
+GET {{BASE_URL}}/messages/facebook?conversationId={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -164,7 +164,7 @@ jsonpath "$.nextUpdate" exists
 # INSTAGRAM --------------------------
 
 # POST /messages recipientId
-POST {{BASE_URL}}/api/messages/instagram
+POST {{BASE_URL}}/messages/instagram
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -183,7 +183,7 @@ jsonpath "$.message" exists
 # -----------------------
 
 # /messages/instagram ---------------
-GET {{BASE_URL}}/api/messages/instagram
+GET {{BASE_URL}}/messages/instagram
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -210,7 +210,7 @@ id: jsonpath "$.messages[0].conversationId"
 # -----------------------
 
 # GET /messages/instagram?conversationsOnly=true ---------------
-GET {{BASE_URL}}/api/messages/instagram?conversationsOnly=true
+GET {{BASE_URL}}/messages/instagram?conversationsOnly=true
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -226,7 +226,7 @@ jsonpath "$.nextUpdate" exists
 # -----------------------
 
 # GET /messages/instagram?conversationId ---------------
-GET {{BASE_URL}}/api/messages/instagram?conversationId={{id}}
+GET {{BASE_URL}}/messages/instagram?conversationId={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

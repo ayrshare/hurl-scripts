@@ -1,5 +1,5 @@
 # /generateJWT POST -------------
-POST {{BASE_URL}}/api/profiles/generateJWT
+POST {{BASE_URL}}/profiles/generateJWT
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

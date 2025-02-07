@@ -1,5 +1,5 @@
 # /history ---------------
-GET {{BASE_URL}}/api/history
+GET {{BASE_URL}}/history
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

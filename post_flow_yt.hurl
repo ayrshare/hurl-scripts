@@ -1,5 +1,5 @@
 # /post POST -------------
-POST {{BASE_URL}}/api/post
+POST {{BASE_URL}}/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -33,7 +33,7 @@ id: jsonpath "$['id']"
 # -----------------------
 
 # /analytics/post -------
-POST {{BASE_URL}}/api/analytics/post
+POST {{BASE_URL}}/analytics/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -55,7 +55,7 @@ jsonpath "$.youtube.analytics.title" exists
 # -----------------------
 
 # /post DELETE ---------
-DELETE {{BASE_URL}}/api/post
+DELETE {{BASE_URL}}/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

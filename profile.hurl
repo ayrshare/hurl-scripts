@@ -1,5 +1,5 @@
 # /profiles/profile POST -------------
-POST {{BASE_URL}}/api/profiles
+POST {{BASE_URL}}/profiles
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -19,7 +19,7 @@ jsonpath "$.profileKey" exists
 # ---------------------------------
 
 # /profiles/profile GET -------------
-GET {{BASE_URL}}/api/profiles?profileKeys[0]={{profileKey}}
+GET {{BASE_URL}}/profiles?profileKeys[0]={{profileKey}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -36,7 +36,7 @@ jsonpath "$.profiles[0].refId" == "{{refId}}"
 # ---------------------------------
 
 # /profiles/profile PUT -------------
-PATCH {{BASE_URL}}/api/profiles
+PATCH {{BASE_URL}}/profiles
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -57,7 +57,7 @@ jsonpath "$.refId" == "{{refId}}"
 # ---------------------------------
 
 # /profiles/profile DELETE -------------
-DELETE {{BASE_URL}}/api/profiles
+DELETE {{BASE_URL}}/profiles
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

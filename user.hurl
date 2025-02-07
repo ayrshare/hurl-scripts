@@ -1,5 +1,5 @@
 # /user -----------------
-GET {{BASE_URL}}/api/user?instagramQuota=true
+GET {{BASE_URL}}/user?instagramQuota=true
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

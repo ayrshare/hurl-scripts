@@ -1,5 +1,5 @@
 # /post POST -------------
-POST {{BASE_URL}}/api/post
+POST {{BASE_URL}}/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -31,7 +31,7 @@ tw_id: jsonpath "$.postIds[0].id"
 # -----------------------
 
 # /comments POST
-POST {{BASE_URL}}/api/comments
+POST {{BASE_URL}}/comments
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -59,7 +59,7 @@ tw_comment_top_id: jsonpath "$.commentId"
 # -----------------------
 
 # /comments GET
-GET {{BASE_URL}}/api/comments?id={{id}}
+GET {{BASE_URL}}/comments?id={{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -77,7 +77,7 @@ jsonpath "$.twitter[0].comment" == "{{tw_comment}}"
 # -----------------------
 
 # /comments/reply POST
-POST {{BASE_URL}}/api/comments/reply
+POST {{BASE_URL}}/comments/reply
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -103,7 +103,7 @@ jsonpath "$.twitter.platform" == "twitter"
 # -----------------------
 
 # /comments DELETE
-DELETE {{BASE_URL}}/api/comments/{{id}}
+DELETE {{BASE_URL}}/comments/{{id}}
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 [Options]
@@ -117,7 +117,7 @@ jsonpath "$.twitter" exists
 # -----------------------
 
 # /analytics/post -------
-POST {{BASE_URL}}/api/analytics/post
+POST {{BASE_URL}}/analytics/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -154,7 +154,7 @@ jsonpath "$.twitter.analytics.username" exists
 # -----------------------
 
 # /post DELETE ---------
-DELETE {{BASE_URL}}/api/post
+DELETE {{BASE_URL}}/post
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {

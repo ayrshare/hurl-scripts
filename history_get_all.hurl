@@ -1,5 +1,5 @@
 ### /history all posts Instagram -
-GET {{BASE_URL}}/api/history/instagram?limit=8
+GET {{BASE_URL}}/history/instagram?limit=8
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -25,7 +25,7 @@ jsonpath "$.nextUpdate" exists
 # -----------------------
 
 ### /history all posts Facebook -
-GET {{BASE_URL}}/api/history/facebook?limit=10
+GET {{BASE_URL}}/history/facebook?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -61,7 +61,7 @@ jsonpath "$.lastUpdated" exists
 jsonpath "$.nextUpdate" exists
 
 ### /history all posts LinkedIn -
-GET {{BASE_URL}}/api/history/linkedin?limit=10
+GET {{BASE_URL}}/history/linkedin?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -89,7 +89,7 @@ jsonpath "$.posts[0].visibility" == "PUBLIC"
 # -----------------------
 
 # /history all posts Threads -
-# GET {{BASE_URL}}/api/history/threads?limit=10
+# GET {{BASE_URL}}/history/threads?limit=10
 # Content-Type: application/json
 # Authorization: Bearer {{API_KEY}}
 
@@ -114,7 +114,7 @@ jsonpath "$.posts[0].visibility" == "PUBLIC"
 #jsonpath "$.posts[0].username" exists
 
 ### /history all posts Twitter -
-GET {{BASE_URL}}/api/history/twitter?limit=10
+GET {{BASE_URL}}/history/twitter?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -144,7 +144,7 @@ jsonpath "$.posts[0].publicMetrics.impressionCount" >= 0
 # -----------------------
 
 ### /history all posts Bluesky -
-GET {{BASE_URL}}/api/history/bluesky?limit=10
+GET {{BASE_URL}}/history/bluesky?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -165,7 +165,7 @@ jsonpath "$.posts[0].postUrl" exists
 # -----------------------
 
 ### /history all posts TikTok -
-GET {{BASE_URL}}/api/history/tiktok?limit=10
+GET {{BASE_URL}}/history/tiktok?limit=10
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 

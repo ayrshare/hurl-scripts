@@ -1,5 +1,5 @@
 # /hook/webhook POST -------------
-POST {{BASE_URL}}/api/hook/webhook
+POST {{BASE_URL}}/hook/webhook
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
@@ -17,7 +17,7 @@ jsonpath "$.url" == "https://www.nytimes.com"
 # ---------------------------------
 
 # /hook/webhook GET -------------
-GET {{BASE_URL}}/api/hook/webhook
+GET {{BASE_URL}}/hook/webhook
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 
@@ -30,7 +30,7 @@ jsonpath "$.updated" exists
 # ---------------------------------
 
 # /hook/webhook DELETE -------------
-DELETE {{BASE_URL}}/api/hook/webhook
+DELETE {{BASE_URL}}/hook/webhook
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
 {
