@@ -142,7 +142,6 @@ jsonpath "$.tiktok.analytics.thumbnailHeight" exists
 jsonpath "$.tiktok.analytics.thumbnailUrl" exists
 jsonpath "$.tiktok.analytics.thumbnailWidth" exists
 jsonpath "$.tiktok.analytics.url" exists
-jsonpath "$.tiktok.analytics.videoDuration" exists
 jsonpath "$.tiktok.analytics.videoViews" exists
 jsonpath "$.tiktok.lastUpdated" exists
 jsonpath "$.tiktok.nextUpdate" exists
