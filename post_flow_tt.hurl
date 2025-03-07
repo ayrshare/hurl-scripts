@@ -129,16 +129,14 @@ jsonpath "$.id" == "{{id}}"
 
 jsonpath "$.tiktok" exists
 jsonpath "$.tiktok.postUrl" exists
-jsonpath "$.tiktok.analytics.caption" exists
-jsonpath "$.tiktok.analytics.comments" exists
+jsonpath "$.tiktok.analytics.commentsCount" exists
 jsonpath "$.tiktok.analytics.created" exists
 jsonpath "$.tiktok.analytics.embedUrl" exists
 jsonpath "$.tiktok.analytics.itemId" exists
-jsonpath "$.tiktok.analytics.likes" exists
+jsonpath "$.tiktok.analytics.likeCount" exists
 jsonpath "$.tiktok.analytics.mediaType" exists
 jsonpath "$.tiktok.analytics.postUrl" exists
-jsonpath "$.tiktok.analytics.shareUrl" exists
-jsonpath "$.tiktok.analytics.shares" exists
+jsonpath "$.tiktok.analytics.shareCount" exists
 jsonpath "$.tiktok.analytics.tags" exists
 jsonpath "$.tiktok.analytics.thumbnailHeight" exists
 jsonpath "$.tiktok.analytics.thumbnailUrl" exists
