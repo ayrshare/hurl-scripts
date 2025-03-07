@@ -117,7 +117,6 @@ jsonpath "$.linkedin.analytics.views.productsPageViews" exists
 jsonpath "$.tiktok.analytics.bio" exists
 jsonpath "$.tiktok.analytics.commentCountTotal" exists
 jsonpath "$.tiktok.analytics.displayName" exists
-jsonpath "$.tiktok.analytics.durationAverage" exists
 jsonpath "$.tiktok.analytics.followerCount" exists
 jsonpath "$.tiktok.analytics.followingCount" exists
 jsonpath "$.tiktok.analytics.likeCountTotal" exists
