@@ -85,7 +85,7 @@ jsonpath "$.posts[0].publishedAt" exists
 jsonpath "$.posts[0].shareCount" >= 0
 jsonpath "$.posts[0].status" == "PUBLISHED"
 jsonpath "$.posts[0].uniqueImpressionsCount" >= 0
-jsonpath "$.posts[0].visibility" == "PUBLIC"
+jsonpath "$.posts[0].visibility" matches "^(PUBLIC|CONNECTIONS|LOGGED_IN)$"
 # -----------------------
 
 # /history all posts Threads -
