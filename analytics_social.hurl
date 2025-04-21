@@ -64,7 +64,7 @@ jsonpath "$.instagram.analytics.followersCount" exists
 jsonpath "$.instagram.analytics.followsCount" exists
 jsonpath "$.instagram.analytics.id" exists
 jsonpath "$.instagram.analytics.igId" exists
-jsonpath "$.instagram.analytics.impressionsCount" exists
+jsonpath "$.instagram.analytics.viewsCount" exists
 jsonpath "$.instagram.analytics.likeCount" exists
 jsonpath "$.instagram.analytics.mediaCount" exists
 jsonpath "$.instagram.analytics.name" exists
