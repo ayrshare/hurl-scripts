@@ -123,7 +123,7 @@ jsonpath "$.instagram.analytics.caption" exists
 jsonpath "$.instagram.analytics.commentsCount" exists
 jsonpath "$.instagram.analytics.created" exists
 jsonpath "$.instagram.analytics.engagementCount" exists
-jsonpath "$.instagram.analytics.impressionsCount" exists
+jsonpath "$.instagram.analytics.viewsCount" exists
 jsonpath "$.instagram.analytics.likeCount" exists
 jsonpath "$.instagram.analytics.mediaProductType" exists
 jsonpath "$.instagram.analytics.mediaType" exists
