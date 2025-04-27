@@ -6,7 +6,7 @@ Authorization: Bearer {{API_KEY}}
 HTTP 200
 [Asserts]
 header "Content-Type" == "application/json; charset=utf-8"
-jsonpath "$.activeSocialAccounts" count == 11
+jsonpath "$.activeSocialAccounts" count == 12
 jsonpath "$.ayrlinkUrl" exists
 jsonpath "$.created" exists
 
@@ -78,32 +78,41 @@ jsonpath "$.displayNames[7].profileUrl" exists
 jsonpath "$.displayNames[7].type" exists
 # jsonpath "$.displayNames[7].userImage" exists
 
-# TikTok
+# Threads
 jsonpath "$.displayNames[8].created" exists
 jsonpath "$.displayNames[8].displayName" exists
 jsonpath "$.displayNames[8].id" exists
-jsonpath "$.displayNames[8].platform" == "tiktok"
+jsonpath "$.displayNames[8].platform" == "threads"
 jsonpath "$.displayNames[8].profileUrl" exists
 jsonpath "$.displayNames[8].userImage" exists
 jsonpath "$.displayNames[8].username" exists
 
-# Twitter
+# TikTok
 jsonpath "$.displayNames[9].created" exists
 jsonpath "$.displayNames[9].displayName" exists
 jsonpath "$.displayNames[9].id" exists
-jsonpath "$.displayNames[9].platform" == "twitter"
+jsonpath "$.displayNames[9].platform" == "tiktok"
 jsonpath "$.displayNames[9].profileUrl" exists
 jsonpath "$.displayNames[9].userImage" exists
 jsonpath "$.displayNames[9].username" exists
 
-# YouTube
+# Twitter
 jsonpath "$.displayNames[10].created" exists
 jsonpath "$.displayNames[10].displayName" exists
 jsonpath "$.displayNames[10].id" exists
-jsonpath "$.displayNames[10].platform" == "youtube"
+jsonpath "$.displayNames[10].platform" == "twitter"
 jsonpath "$.displayNames[10].profileUrl" exists
 jsonpath "$.displayNames[10].userImage" exists
 jsonpath "$.displayNames[10].username" exists
+
+# YouTube
+jsonpath "$.displayNames[11].created" exists
+jsonpath "$.displayNames[11].displayName" exists
+jsonpath "$.displayNames[11].id" exists
+jsonpath "$.displayNames[11].platform" == "youtube"
+jsonpath "$.displayNames[11].profileUrl" exists
+jsonpath "$.displayNames[11].userImage" exists
+jsonpath "$.displayNames[11].username" exists
 
 jsonpath "$.email" == {{EMAIL}}
 jsonpath "$.monthlyApiCalls" >= 0
