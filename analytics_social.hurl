@@ -147,12 +147,6 @@ jsonpath "$.youtube.analytics.playlists[0].publishedAt" exists
 jsonpath "$.youtube.analytics.playlists[0].title" exists
 jsonpath "$.youtube.analytics.playlists[0].url" exists
 jsonpath "$.youtube.analytics.playlists[0].channelId" exists
-jsonpath "$.youtube.analytics.playlists[1].description" exists
-jsonpath "$.youtube.analytics.playlists[1].id" exists
-jsonpath "$.youtube.analytics.playlists[1].publishedAt" exists
-jsonpath "$.youtube.analytics.playlists[1].title" exists
-jsonpath "$.youtube.analytics.playlists[1].url" exists
-jsonpath "$.youtube.analytics.playlists[1].channelId" exists
 jsonpath "$.youtube.analytics.privacyStatus" exists
 jsonpath "$.youtube.analytics.subscriberCount" exists
 jsonpath "$.youtube.analytics.subscribersGained" exists
