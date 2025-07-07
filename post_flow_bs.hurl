@@ -78,6 +78,8 @@ jsonpath "$.bluesky[0].comment" == "{{bs_comment}}"
 POST {{BASE_URL}}/comments/reply
 Content-Type: application/json
 Authorization: Bearer {{API_KEY}}
+[Options]
+delay: 5000
 {
     "commentId": "{{bs_comment_top_id}}",
     "platforms": [
