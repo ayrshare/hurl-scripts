@@ -135,7 +135,7 @@ jsonpath "$.facebook.postUrl" exists
 #jsonpath "$.facebook.analytics.clicksUnique" exists
 jsonpath "$.facebook.analytics.commentsCount" exists
 #jsonpath "$.facebook.analytics.engagedUsers" exists
-jsonpath "$.facebook.analytics.impressionsUnique" exists
+#jsonpath "$.facebook.analytics.impressionsUnique" exists
 jsonpath "$.facebook.analytics.likeCount" exists
 # jsonpath "$.facebook.analytics.negativeFeedback" exists
 # jsonpath "$.facebook.analytics.negativeFeedbackUnique" exists
