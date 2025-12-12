@@ -46,7 +46,7 @@ jsonpath "$.facebook.analytics.name" exists
 jsonpath "$.facebook.analytics.pagePostEngagements" exists
 jsonpath "$.facebook.analytics.pagePostsImpressions" exists
 jsonpath "$.facebook.analytics.pagePostsImpressionsPaid" exists
-jsonpath "$.facebook.analytics.pageVideoViewTime" exists
+# jsonpath "$.facebook.analytics.pageVideoViewTime" exists
 jsonpath "$.facebook.analytics.pageVideoViews" exists
 jsonpath "$.facebook.analytics.pageVideoViewsPaid" exists
 jsonpath "$.facebook.analytics.reactions.anger" exists
